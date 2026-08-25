@@ -264,7 +264,7 @@ export default function Navbar() {
             className="p-navbar-mobile-link"
             onClick={() => setOpen(false)}
           >
-            <span>📌 Visi &amp; Misi</span>
+            <span>Visi &amp; Misi</span>
           </Link>
 
           <Link
@@ -272,7 +272,7 @@ export default function Navbar() {
             className="p-navbar-mobile-link"
             onClick={() => setOpen(false)}
           >
-            <span>🏫 Fasilitas Kampus</span>
+            <span>Fasilitas Kampus</span>
           </Link>
 
           <Link
@@ -280,7 +280,7 @@ export default function Navbar() {
             className="p-navbar-mobile-link"
             onClick={() => setOpen(false)}
           >
-            <span>🏆 Ekstrakurikuler (Eskul)</span>
+            <span>Ekstrakurikuler</span>
           </Link>
         </div>
 
@@ -297,7 +297,7 @@ export default function Navbar() {
             className="p-navbar-mobile-login"
             onClick={() => setOpen(false)}
           >
-            🔐 Portal Masuk
+            Portal Masuk
           </Link>
         </div>
       </div>

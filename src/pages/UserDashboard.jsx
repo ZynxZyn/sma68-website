@@ -201,28 +201,49 @@ export default function UserDashboard() {
 
               <section className="user-stats">
                 <div className="user-stat-card user-stat-card--cyan">
-                  <div className="user-stat-icon">📢</div>
+                  <div className="user-stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m3 11 18-5v12L3 14v-3z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                    </svg>
+                  </div>
                   <div>
                     <div className="user-stat-value">{announcements.length}</div>
                     <div className="user-stat-label">Pengumuman Terbaru</div>
                   </div>
                 </div>
                 <div className="user-stat-card user-stat-card--yellow">
-                  <div className="user-stat-icon">📅</div>
+                  <div className="user-stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </div>
                   <div>
                     <div className="user-stat-value">{agenda.length}</div>
                     <div className="user-stat-label">Agenda Mendatang</div>
                   </div>
                 </div>
                 <div className="user-stat-card user-stat-card--red">
-                  <div className="user-stat-icon">⏳</div>
+                  <div className="user-stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </div>
                   <div>
                     <div className="user-stat-value">{expiringSoon}</div>
                     <div className="user-stat-label">Agenda 7 Hari ke Depan</div>
                   </div>
                 </div>
                 <div className="user-stat-card user-stat-card--navy">
-                  <div className="user-stat-icon">🎓</div>
+                  <div className="user-stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                  </div>
                   <div>
                     <div className="user-stat-value">{ROLE_LABEL[user?.role] ?? user?.role}</div>
                     <div className="user-stat-label">Peran Anda di Portal</div>
@@ -299,8 +320,22 @@ export default function UserDashboard() {
                           <div className="user-agenda-body">
                             <h3 className="user-list-title">{item.title}</h3>
                             <div className="user-list-meta">
-                              {item.startTime && <span>🕐 {item.startTime}{item.endTime ? ` - ${item.endTime}` : ''}</span>}
-                              {item.location && <span>📍 {item.location}</span>}
+                              {item.startTime && (
+                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                                  </svg>
+                                  {item.startTime}{item.endTime ? ` - ${item.endTime}` : ''}
+                                </span>
+                              )}
+                              {item.location && (
+                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+                                  </svg>
+                                  {item.location}
+                                </span>
+                              )}
                             </div>
                           </div>
                         </article>
@@ -389,8 +424,20 @@ export default function UserDashboard() {
                       <div className="user-agenda-body">
                         <h3 className="user-list-title">{item.title}</h3>
                         <div className="user-list-meta">
-                          <span>🕐 {item.startTime ?? 'Waktu menyusul'}{item.endTime ? ` - ${item.endTime}` : ''}</span>
-                          {item.location && <span>📍 {item.location}</span>}
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            {item.startTime ?? 'Waktu menyusul'}{item.endTime ? ` - ${item.endTime}` : ''}
+                          </span>
+                          {item.location && (
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+                              </svg>
+                              {item.location}
+                            </span>
+                          )}
                         </div>
                         {item.description && <p className="user-list-excerpt">{item.description}</p>}
                       </div>
