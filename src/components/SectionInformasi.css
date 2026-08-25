@@ -2,19 +2,19 @@
    Section Informasi Component Styles — Dynamic Tabs, Search, Filter & Grid
    ========================================================================== */
 
-/* Tabs Wrapper (Segmented / Modern Pill Navigation) */
+/* Tabs Wrapper */
 .p-tabs-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin: 0 auto 40px;
-  padding: 6px;
+  gap: 6px;
+  margin: 0 auto 28px;
+  padding: 5px;
   background: #ffffff;
   border: 1.5px solid rgba(11, 31, 51, 0.12);
   border-radius: 9999px;
   max-width: fit-content;
-  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
+  box-shadow: 0 2px 12px rgba(11, 31, 51, 0.05);
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -28,9 +28,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
+  padding: 9px 20px;
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--color-text-muted, #5f758a);
   background: transparent;
@@ -42,7 +42,7 @@
 }
 
 .p-tab-btn svg {
-  opacity: 0.75;
+  opacity: 0.7;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -77,30 +77,30 @@
 }
 
 .p-tab-animate {
-  animation: tabFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: tabFadeIn 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes tabFadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================================
-   Search Bar (Berita)
+   Search Bar
    ========================================================================== */
 .p-search-container {
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
 .p-search-box {
   position: relative;
-  max-width: 760px;
+  max-width: 680px;
   margin-inline: auto;
 }
 
 .p-search-icon {
   position: absolute;
-  left: 18px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--color-text-muted, #5f758a);
@@ -109,16 +109,16 @@
 
 .p-search-input {
   width: 100%;
-  height: 52px;
-  padding: 0 46px 0 50px;
+  height: 48px;
+  padding: 0 44px 0 48px;
   border: 1.5px solid rgba(11, 31, 51, 0.16);
   border-radius: 9999px;
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   color: var(--ink, #0b1f33);
   background: #ffffff;
   outline: none;
-  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.03);
+  box-shadow: 0 2px 10px rgba(11, 31, 51, 0.03);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -128,20 +128,20 @@
 
 .p-search-input:focus {
   border-color: var(--accent, #06b6d4);
-  box-shadow: 0 0 0 3.5px rgba(6, 182, 212, 0.18);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
 }
 
 .p-search-clear {
   position: absolute;
-  right: 14px;
+  right: 13px;
   top: 50%;
   transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: rgba(11, 31, 51, 0.08);
   color: var(--color-text-muted, #5f758a);
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,30 +156,32 @@
 }
 
 /* ==========================================================================
-   News Cards Grid (Warta SMAN 68)
+   News Cards Grid
    ========================================================================== */
 .p-news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 26px;
 }
 
 .p-news-card {
   background: #ffffff;
-  border: 1.5px solid rgba(11, 31, 51, 0.12);
-  border-radius: 12px;
+  border: 1.5px solid rgba(11, 31, 51, 0.10);
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  box-shadow: 0 2px 12px rgba(11, 31, 51, 0.06);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
 }
 
 .p-news-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: var(--accent, #06b6d4);
-  box-shadow: 0 12px 30px rgba(11, 31, 51, 0.08);
+  box-shadow: 0 10px 28px rgba(11, 31, 51, 0.09);
 }
 
 .p-news-media {
@@ -197,7 +199,7 @@
 }
 
 .p-news-card:hover .p-news-media img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .p-no-image-box {
@@ -214,7 +216,7 @@
 
 .p-no-image-box span {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -223,22 +225,22 @@
 
 .p-news-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 12px;
+  left: 12px;
   background: var(--ink, #0b1f33);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 4px 10px;
+  padding: 4px 9px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .p-news-body {
-  padding: 22px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -247,20 +249,20 @@
 .p-news-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
+  gap: 7px;
+  font-size: 0.775rem;
   font-weight: 600;
   color: var(--color-text-muted, #5f758a);
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .p-news-title {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--ink, #0b1f33);
-  line-height: 1.4;
-  margin: 0 0 10px;
+  line-height: 1.42;
+  margin: 0 0 9px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -268,23 +270,23 @@
 }
 
 .p-news-desc {
-  font-size: 0.875rem;
+  font-size: 0.855rem;
   color: #475569;
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   flex: 1;
 }
 
 .p-news-readmore {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: #0891b2;
   transition: transform 0.15s ease, color 0.15s ease;
@@ -296,19 +298,19 @@
 }
 
 /* ==========================================================================
-   Ruang Prestasi (Filter Bar & Cards)
+   Ruang Prestasi — Filter Bar
    ========================================================================== */
 .p-prestasi-filter-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 34px;
-  padding: 16px 22px;
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1.5px solid rgba(11, 31, 51, 0.12);
-  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.03);
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1.5px solid rgba(11, 31, 51, 0.10);
+  box-shadow: 0 2px 10px rgba(11, 31, 51, 0.03);
 }
 
 .p-filter-group {
@@ -319,22 +321,22 @@
 
 .p-filter-label {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--ink, #0b1f33);
   white-space: nowrap;
 }
 
 .p-filter-select {
-  height: 40px;
-  padding: 0 32px 0 12px;
+  height: 38px;
+  padding: 0 30px 0 11px;
   border: 1.5px solid rgba(11, 31, 51, 0.16);
-  border-radius: 6px;
+  border-radius: 8px;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.835rem;
   font-weight: 600;
   color: var(--ink, #0b1f33);
-  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235f758a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 12px center;
+  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235f758a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 10px center;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -344,16 +346,16 @@
 
 .p-filter-select:focus {
   border-color: var(--accent, #06b6d4);
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
 }
 
 .p-filter-reset-btn {
-  height: 40px;
-  padding: 0 16px;
-  border: 1.5px solid rgba(11, 31, 51, 0.2);
-  border-radius: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1.5px solid rgba(11, 31, 51, 0.18);
+  border-radius: 8px;
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-text-muted, #5f758a);
   background: #ffffff;
@@ -372,25 +374,27 @@
 .p-prestasi-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 26px;
 }
 
 .p-prestasi-card {
   background: #ffffff;
-  border: 1.5px solid rgba(11, 31, 51, 0.12);
-  border-radius: 12px;
+  border: 1.5px solid rgba(11, 31, 51, 0.10);
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  box-shadow: 0 2px 12px rgba(11, 31, 51, 0.06);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
 }
 
 .p-prestasi-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: var(--accent, #06b6d4);
-  box-shadow: 0 12px 30px rgba(11, 31, 51, 0.08);
+  box-shadow: 0 10px 28px rgba(11, 31, 51, 0.09);
 }
 
 .p-prestasi-media {
@@ -408,18 +412,18 @@
 }
 
 .p-prestasi-card:hover .p-prestasi-media img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .p-prestasi-media .p-tier-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  top: 12px;
+  left: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 .p-prestasi-body {
-  padding: 22px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -428,11 +432,11 @@
 .p-prestasi-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
+  gap: 7px;
+  font-size: 0.775rem;
   font-weight: 700;
   color: var(--color-text-muted, #5f758a);
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .p-prestasi-cat {
@@ -442,67 +446,55 @@
   font-size: 0.72rem;
 }
 
-/* Tier Badges (Gold, Silver, Bronze, Finalist) */
+/* Tier Badges */
 .p-tier-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
+  gap: 5px;
+  padding: 4px 11px;
   border-radius: 9999px;
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.p-tier--gold {
-  background: #ffffff;
-  color: #b45309;
-  border: 1.5px solid #f59e0b;
-}
-
-.p-tier--silver {
-  background: #ffffff;
-  color: #334155;
-  border: 1.5px solid #64748b;
-}
-
-.p-tier--bronze {
-  background: #ffffff;
-  color: #92400e;
-  border: 1.5px solid #d97706;
-}
-
-.p-tier--finalist {
-  background: #ffffff;
-  color: #0891b2;
-  border: 1.5px solid #06b6d4;
-}
-
+.p-tier--gold     { background: #fffbeb; color: #b45309; border: 1.5px solid #f59e0b; }
+.p-tier--silver   { background: #f8fafc; color: #334155; border: 1.5px solid #64748b; }
+.p-tier--bronze   { background: #fff7ed; color: #92400e; border: 1.5px solid #d97706; }
+.p-tier--finalist { background: #ecfeff; color: #0891b2; border: 1.5px solid #06b6d4; }
 
 .p-prestasi-year {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.78rem;
+  font-size: 0.775rem;
   font-weight: 800;
   color: var(--color-text-muted, #5f758a);
 }
 
 .p-prestasi-title {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--ink, #0b1f33);
-  line-height: 1.4;
-  margin: 0 0 8px;
+  line-height: 1.42;
+  margin: 0 0 7px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .p-prestasi-event {
-  font-size: 0.8125rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted, #5f758a);
   line-height: 1.5;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .p-prestasi-footer {
@@ -510,17 +502,24 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding-top: 14px;
+  padding-top: 12px;
   border-top: 1.5px solid rgba(11, 31, 51, 0.08);
 }
 
 .p-prestasi-winner {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.8125rem;
+  gap: 5px;
+  font-size: 0.8rem;
   color: var(--ink, #0b1f33);
   font-weight: 600;
+  overflow: hidden;
+}
+
+.p-prestasi-winner span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .p-prestasi-winner svg {
@@ -530,40 +529,44 @@
 
 .p-prestasi-tag {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
   color: #0891b2;
-  padding: 3px 10px;
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 3px 9px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.22);
   border-radius: 9999px;
   text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
-   Galeri Kegiatan Grid
+   Galeri Kegiatan Grid — 3 kolom konsisten
    ========================================================================== */
 .p-galeri-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
 }
 
 .p-galeri-item {
   position: relative;
-  aspect-ratio: 16/10;
-  border-radius: 12px;
-  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  aspect-ratio: 4/3;
+  border-radius: 14px;
+  border: 1.5px solid rgba(11, 31, 51, 0.10);
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  box-shadow: 0 2px 12px rgba(11, 31, 51, 0.06);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
 }
 
 .p-galeri-item:hover {
   transform: translateY(-4px);
   border-color: var(--accent, #06b6d4);
-  box-shadow: 0 12px 28px rgba(11, 31, 51, 0.12);
+  box-shadow: 0 10px 28px rgba(11, 31, 51, 0.12);
 }
 
 .p-galeri-item img {
@@ -574,47 +577,62 @@
 }
 
 .p-galeri-item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
+/* Always-visible badge — kategori selalu terlihat */
+.p-galeri-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Hover overlay — judul & desc */
 .p-galeri-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(11, 31, 51, 0.9) 0%, rgba(11, 31, 51, 0.3) 60%, transparent 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(11, 31, 51, 0.88) 0%,
+    rgba(11, 31, 51, 0.25) 55%,
+    transparent 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 18px;
+  padding: 18px 16px;
   opacity: 0;
   transition: opacity 0.25s ease;
+  z-index: 1;
 }
 
 .p-galeri-item:hover .p-galeri-overlay {
   opacity: 1;
 }
 
-.p-galeri-badge {
-  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent, #06b6d4);
-  margin-bottom: 4px;
-}
-
 .p-galeri-title {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.3;
+  line-height: 1.35;
   margin: 0 0 4px;
 }
 
 .p-galeri-desc {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.775rem;
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.4;
   margin: 0;
   display: -webkit-box;
@@ -626,10 +644,10 @@
 /* Empty State */
 .p-empty-state {
   text-align: center;
-  padding: 48px 24px;
+  padding: 44px 24px;
   background: #ffffff;
-  border-radius: 12px;
-  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 14px;
+  border: 1.5px solid rgba(11, 31, 51, 0.10);
 }
 
 .p-empty-state p {
@@ -637,7 +655,9 @@
   margin-bottom: 16px;
 }
 
-/* Modals */
+/* ==========================================================================
+   Modals
+   ========================================================================== */
 .p-modal-news-body,
 .p-modal-galeri-body {
   display: flex;
@@ -648,36 +668,63 @@
 .p-modal-news-img,
 .p-modal-galeri-img {
   width: 100%;
-  max-height: 380px;
+  max-height: 360px;
   object-fit: cover;
-  border-radius: 8px;
-  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 10px;
+  border: 1.5px solid rgba(11, 31, 51, 0.10);
 }
 
 .p-modal-news-meta {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.8125rem;
+  gap: 8px;
+  font-size: 0.8rem;
   color: var(--color-text-muted, #5f758a);
   flex-wrap: wrap;
 }
 
+/* Unified meta tag — ganti sec-pill di semua modal */
+.p-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(11, 31, 51, 0.07);
+  color: var(--ink, #0b1f33);
+  border: 1px solid rgba(11, 31, 51, 0.14);
+}
+
+.p-modal-galeri-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
 .p-modal-news-text {
-  font-size: 0.95rem;
+  font-size: 0.925rem;
   line-height: 1.8;
   color: #334155;
 }
 
+.p-modal-news-text p {
+  margin: 0 0 10px;
+}
+
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive
    ========================================================================== */
 @media (max-width: 1080px) {
   .p-news-grid,
-  .p-prestasi-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .p-prestasi-grid,
   .p-galeri-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -691,14 +738,16 @@
   }
 
   .p-tab-btn {
-    padding: 8px 14px;
-    font-size: 0.8125rem;
+    padding: 8px 13px;
+    font-size: 0.8rem;
+    gap: 6px;
   }
 
   .p-news-grid,
   .p-prestasi-grid,
   .p-galeri-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .p-prestasi-filter-bar {

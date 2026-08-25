@@ -564,7 +564,7 @@ export default function SectionInformasi() {
           <div className="p-modal-news-body">
             <img src={selectedBerita.image} alt={selectedBerita.title} className="p-modal-news-img" />
             <div className="p-modal-news-meta">
-              <span className="sec-pill">{selectedBerita.category}</span>
+              <span className="p-meta-tag">{selectedBerita.category}</span>
               <span>{selectedBerita.date}</span>
               <span>Oleh: {selectedBerita.author}</span>
             </div>
@@ -584,7 +584,7 @@ export default function SectionInformasi() {
             )}
             <div className="p-modal-news-meta">
               <span className={`p-tier-badge p-tier--${selectedPrestasi.tier || 'gold'}`}>{selectedPrestasi.tierLabel}</span>
-              <span className="sec-pill">{selectedPrestasi.category}</span>
+              <span className="p-meta-tag">{selectedPrestasi.category}</span>
               <span>Tahun {selectedPrestasi.year}</span>
               <span>Tingkat: {selectedPrestasi.level}</span>
             </div>
@@ -602,7 +602,7 @@ export default function SectionInformasi() {
           <div className="p-modal-galeri-body">
             <img src={selectedGaleri.image} alt={selectedGaleri.title} className="p-modal-galeri-img" />
             <div className="p-modal-galeri-info">
-              <span className="sec-pill">{selectedGaleri.category}</span>
+              <span className="p-meta-tag">{selectedGaleri.category}</span>
               <p>{selectedGaleri.desc}</p>
             </div>
           </div>
