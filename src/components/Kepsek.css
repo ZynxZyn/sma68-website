@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Kepsek Component Styles — Layered Card (Sambutan Kiri Rata Kanan, Foto Kanan)
+   ========================================================================== */
+
+.p-kepsek-overlay {
+  background: linear-gradient(135deg, rgba(11, 31, 51, 0.88) 0%, rgba(11, 31, 51, 0.68) 100%);
+}
+
+.p-kepsek-layered-card {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 72px;
+  align-items: center;
+}
+
+
+/* Sambutan Column — Rata Kanan */
+.p-kepsek-content-col {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.p-kepsek-heading {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-block: 16px 24px;
+  font-style: italic;
+  text-align: right;
+}
+
+.p-kepsek-quote-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding-right: 20px;
+  padding-left: 0;
+  border-right: 3px solid var(--accent, #06b6d4);
+  border-left: none;
+  text-align: right;
+}
+
+.p-kepsek-quote-body p {
+  font-size: var(--text-base, 1rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: right;
+}
+
+.p-kepsek-sign-box {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: right;
+  width: 100%;
+}
+
+.p-kepsek-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg, 1.125rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.p-kepsek-title {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--accent, #06b6d4);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Foto Column — Kanan */
+.p-kepsek-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-kepsek-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+
+.p-kepsek-photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(180deg, #1e3a5f 0%, #0b1f33 100%);
+  border: 2px solid rgba(6, 182, 212, 0.35);
+  border-radius: var(--radius-lg, 8px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 24px 60px rgba(11, 31, 51, 0.55), 0 4px 16px rgba(11, 31, 51, 0.25);
+}
+
+.p-kepsek-real-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform var(--transition-std, 250ms ease);
+}
+
+.p-kepsek-photo-container:hover .p-kepsek-real-photo {
+  transform: scale(1.03);
+}
+
+.p-kepsek-avatar-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(11, 31, 51, 0.2);
+  z-index: 2;
+}
+
+.p-kepsek-badge-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.p-kepsek-badge-pill {
+  margin-top: 14px;
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: var(--radius-pill, 9999px);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .p-kepsek-layered-card {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .p-kepsek-content-col {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .p-kepsek-heading,
+  .p-kepsek-quote-body,
+  .p-kepsek-quote-body p,
+  .p-kepsek-sign-box {
+    text-align: left;
+  }
+
+  .p-kepsek-quote-body {
+    padding-left: 18px;
+    padding-right: 0;
+    border-left: 2px solid var(--accent, #06b6d4);
+    border-right: none;
+  }
+
+  .p-kepsek-photo-col {
+    order: -1;
+    align-items: flex-start;
+  }
+
+  .p-kepsek-photo-frame {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-kepsek-section {
+    padding-block: 56px;
+  }
+}

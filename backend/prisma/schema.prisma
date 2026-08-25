@@ -1,0 +1,242 @@
+// Prisma schema for SMA 68 Backend
+// Based on MAIN.md section 16 & 17
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+// ============================================================
+// ENUMS
+// ============================================================
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  GURU
+  STAFF
+  SISWA
+}
+
+enum NewsStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+}
+
+// ============================================================
+// AUTH / USER
+// ============================================================
+
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(SISWA)
+  avatar       String?
+  isActive     Boolean  @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  studentProfile StudentProfile?
+  teacherProfile TeacherProfile?
+  staffProfile   StaffProfile?
+
+  authoredNews          News[]              @relation("NewsAuthor")
+  authoredAnnouncements Announcement[]      @relation("AnnouncementAuthor")
+  authoredAgenda        Agenda[]            @relation("AgendaAuthor")
+  authoredAchievements  Achievement[]       @relation("AchievementAuthor")
+  activityLogs          ActivityLog[]
+  refreshTokens         RefreshToken[]
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model StudentProfile {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nisn          String?
+  class         String?
+  academicYear  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model TeacherProfile {
+  id         String   @id @default(cuid())
+  userId     String   @unique
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nip        String?
+  subject    String?
+  position   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model StaffProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nip       String?
+  division  String?
+  position  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============================================================
+// CONTENT — NEWS
+// ============================================================
+
+model News {
+  id            String      @id @default(cuid())
+  title         String
+  slug          String      @unique
+  excerpt       String?
+  content       String
+  thumbnail     String?
+  category      String?
+  status        NewsStatus  @default(DRAFT)
+  publishedAt   DateTime?
+  seoTitle      String?
+  seoDescription String?
+  viewCount     Int         @default(0)
+  authorId      String
+  author        User        @relation("NewsAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([authorId])
+}
+
+// ============================================================
+// CONTENT — ANNOUNCEMENTS
+// ============================================================
+
+model Announcement {
+  id           String        @id @default(cuid())
+  title        String
+  content      String
+  status       ContentStatus @default(DRAFT)
+  publishDate  DateTime?
+  expireDate   DateTime?
+  authorId     String
+  author       User          @relation("AnnouncementAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([status, publishDate])
+}
+
+// ============================================================
+// CONTENT — AGENDA
+// ============================================================
+
+model Agenda {
+  id          String        @id @default(cuid())
+  title       String
+  description String?
+  date        DateTime
+  startTime   String?
+  endTime     String?
+  location    String?
+  coverImage  String?
+  status      ContentStatus @default(PUBLISHED)
+  authorId    String
+  author      User          @relation("AgendaAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([date, status])
+}
+
+// ============================================================
+// CONTENT — ACHIEVEMENTS
+// ============================================================
+
+model Achievement {
+  id           String   @id @default(cuid())
+  title        String
+  category     String?
+  level        String?
+  year         String?
+  achievement  String?
+  studentTeam  String?
+  image        String?
+  description  String?
+  authorId     String
+  author       User     @relation("AchievementAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([category, year])
+}
+
+// ============================================================
+// CONTENT — GALLERY
+// ============================================================
+
+model Gallery {
+  id        String          @id @default(cuid())
+  title     String
+  caption   String?
+  sortOrder Int             @default(0)
+  album     String?
+  images    GalleryImage[]
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+}
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  url       String
+  caption   String?
+  sortOrder Int      @default(0)
+  galleryId String
+  gallery   Gallery  @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([galleryId])
+}
+
+// ============================================================
+// SYSTEM — ACTIVITY LOG
+// ============================================================
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String
+  entity    String?
+  entityId  String?
+  metadata  String?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+}

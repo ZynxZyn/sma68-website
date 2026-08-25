@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Hero Component Styles — Prestigious, Cinematic & High-End School Banner
+   ========================================================================== */
+
+.p-hero {
+  position: relative;
+  min-height: min(100vh, 920px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 150px 110px;
+  overflow: hidden;
+  background: var(--ink, #0b1f33);
+  color: #fff;
+}
+
+/* Background Slideshow */
+.p-hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.p-hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.p-hero-slide.active {
+  opacity: 1;
+}
+
+.p-hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.p-hero-slide.active img {
+  animation: heroKenBurns 8s ease-out forwards;
+}
+
+@keyframes heroKenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+/* Scrim & Lighting */
+.p-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 51, 0.4) 0%, rgba(11, 31, 51, 0.6) 50%, rgba(11, 31, 51, 0.88) 100%),
+    radial-gradient(ellipse at center, rgba(11, 31, 51, 0.25) 0%, rgba(11, 31, 51, 0.75) 100%);
+}
+
+.p-hero-ambient-glow {
+  position: absolute;
+  z-index: 1;
+  width: 800px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.14) 0%, rgba(11, 31, 51, 0) 70%);
+  pointer-events: none;
+}
+
+/* Floating Navigation Arrows */
+.p-hero-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(11, 31, 51, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-hero-nav-btn:hover {
+  opacity: 1;
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  border-color: var(--accent, #06b6d4);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.p-hero-nav-btn--prev {
+  left: 32px;
+}
+
+.p-hero-nav-btn--next {
+  right: 32px;
+}
+
+/* Hero Content Area */
+.p-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin-inline: auto;
+  text-align: center;
+  animation: heroContentIn 0.85s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+@keyframes heroContentIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* School Badge */
+.p-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(11, 31, 51, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-bottom: 26px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.p-hero-badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.25);
+  animation: badgePulse 2s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.p-hero-badge-text {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Headline */
+.p-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 6.5vw, 5.25rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: #ffffff;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.p-hero-title em {
+  font-style: normal;
+  color: var(--accent, #06b6d4);
+  font-weight: 800;
+}
+
+/* Description */
+.p-hero-desc {
+  margin: 24px auto 0;
+  max-width: 840px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  text-wrap: pretty;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Buttons */
+.p-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.p-hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-default, 6px);
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-hero-cta-btn svg {
+  transition: transform var(--transition-fast, 150ms ease);
+}
+
+.p-hero-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Slide Navigation Dots */
+.p-hero-dots {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 38px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(11, 31, 51, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.p-hero-dot {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-hero-dot span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent, #06b6d4);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.p-hero-dot.active {
+  background: rgba(255, 255, 255, 0.35);
+  width: 40px;
+}
+
+.p-hero-dot.active span {
+  animation: dotProgress 6s linear forwards;
+}
+
+@keyframes dotProgress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+
+/* Mouse Scroll Indicator */
+.p-hero-scroll {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .p-hero-nav-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-hero {
+    padding-block: 130px 84px;
+    min-height: auto;
+  }
+
+  .p-hero-badge {
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  .p-hero-badge-text {
+    font-size: 0.72rem;
+  }
+
+  .p-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .p-hero-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .p-hero-dots {
+    bottom: 24px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-hero-slide.active img,
+  .p-hero-inner,
+  .p-hero-dot.active span {
+    animation: none !important;
+  }
+}

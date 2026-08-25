@@ -1,0 +1,55 @@
+.app-main {
+  min-height: 100vh;
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+main > * {
+  scroll-margin-top: 104px;
+}
+
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Skip link — muncul saat difokuskan keyboard */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 300;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Responsive scroll offset */
+@media (max-width: 560px) {
+  main > * {
+    scroll-margin-top: 80px;
+  }
+}

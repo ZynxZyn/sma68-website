@@ -1,0 +1,418 @@
+/* ==========================================================================
+   Kontak Component Styles — 2-Column Info, Map Embed & Form
+   ========================================================================== */
+
+.p-kontak-header {
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+
+.p-kontak-header .sec-pill {
+  margin-bottom: 14px;
+}
+
+.p-kontak-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.p-kontak-title em {
+  font-style: normal;
+  color: var(--accent, #06b6d4);
+}
+
+.p-kontak-sub {
+  font-size: var(--text-base, 1rem);
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.7;
+}
+
+/* 2-Column Grid */
+.p-kontak-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 52px;
+  align-items: start;
+}
+
+
+
+/* ---- LEFT COLUMN ---- */
+.p-kontak-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.p-kontak-cards {
+  display: grid;
+  gap: 12px;
+}
+
+.p-kontak-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: var(--radius-md, 6px);
+  box-shadow: 0 2px 8px rgba(11, 31, 51, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow var(--transition-std, 250ms ease), border-color var(--transition-std, 250ms ease), transform var(--transition-std, 250ms ease);
+}
+
+.p-kontak-card--link:hover {
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 4px 18px rgba(6, 182, 212, 0.12);
+  transform: translateY(-2px);
+}
+
+.p-kontak-ico {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-default, 6px);
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--accent, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-kontak-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.p-kontak-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #5f758a);
+}
+
+.p-kontak-card-value {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-kontak-card-sub {
+  font-size: 0.79rem;
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.4;
+}
+
+.p-kontak-card-arrow {
+  flex-shrink: 0;
+  color: var(--color-text-muted, #5f758a);
+  transition: color var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease);
+}
+
+.p-kontak-card--link:hover .p-kontak-card-arrow {
+  color: var(--accent, #06b6d4);
+  transform: translate(2px, -2px);
+}
+
+/* Map Embed */
+.p-kontak-map {
+  border-radius: var(--radius-md, 6px);
+  overflow: hidden;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  box-shadow: 0 2px 8px rgba(11, 31, 51, 0.05);
+}
+
+.p-kontak-map-inner {
+  height: 200px;
+  background: #e8eef4;
+  overflow: hidden;
+}
+
+.p-kontak-map-inner iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(20%);
+}
+
+.p-kontak-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 13px 20px;
+  background: #ffffff;
+  color: var(--link-text, #0e7490);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-top: 1px solid rgba(11, 31, 51, 0.08);
+  transition: background var(--transition-fast, 150ms ease), color var(--transition-fast, 150ms ease);
+}
+
+.p-kontak-map-btn:hover {
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  text-decoration: none;
+}
+
+/* ---- RIGHT COLUMN — Form Card ---- */
+.p-kontak-right {
+  position: sticky;
+  top: 100px;
+}
+
+.p-kontak-form-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: var(--radius-lg, 8px);
+  box-shadow: 0 4px 24px rgba(11, 31, 51, 0.07);
+  overflow: hidden;
+}
+
+.p-kontak-form-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid rgba(11, 31, 51, 0.07);
+  background: var(--bg-soft, #f5fafc);
+}
+
+.p-kontak-form-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 4px;
+}
+
+.p-kontak-form-header p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #5f758a);
+}
+
+.p-kontak-form {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.p-kontak-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.p-kontak-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.p-kontak-field label {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink, #0b1f33);
+}
+
+.p-kontak-field label span {
+  color: var(--accent, #06b6d4);
+  margin-left: 2px;
+}
+
+.p-kontak-field input,
+.p-kontak-field textarea,
+.p-kontak-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1.5px solid rgba(11, 31, 51, 0.15);
+  border-radius: var(--radius-default, 6px);
+  background: var(--bg-soft, #f5fafc);
+  color: var(--ink, #0b1f33);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color var(--transition-fast, 150ms ease), box-shadow var(--transition-fast, 150ms ease), background var(--transition-fast, 150ms ease);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.p-kontak-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230B1F33' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.p-kontak-field input:focus,
+.p-kontak-field textarea:focus,
+.p-kontak-field select:focus {
+  border-color: var(--accent, #06b6d4);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+}
+
+.p-kontak-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.p-kontak-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  height: 50px;
+  border-radius: var(--radius-default, 6px);
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: var(--text-base, 1rem);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease);
+}
+
+.p-kontak-submit-btn:hover:not(:disabled) {
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  transform: translateY(-1px);
+}
+
+.p-kontak-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.p-kontak-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: kontakSpin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes kontakSpin {
+  to { transform: rotate(360deg); }
+}
+
+.p-kontak-disclaimer {
+  text-align: center;
+  font-size: 0.775rem;
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.5;
+}
+
+/* Success State */
+.p-kontak-success {
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  animation: kontakSuccessIn 400ms var(--ease-out, ease) both;
+}
+
+@keyframes kontakSuccessIn {
+  from { opacity: 0; transform: scale(0.97) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.p-kontak-success-ico {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--accent, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.p-kontak-success h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+}
+
+.p-kontak-success p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+.p-kontak-back-btn {
+  margin-top: 8px;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: var(--radius-default, 6px);
+  border: 1.5px solid rgba(11, 31, 51, 0.18);
+  background: transparent;
+  color: var(--ink, #0b1f33);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-kontak-back-btn:hover {
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  border-color: var(--ink, #0b1f33);
+}
+
+@media (max-width: 960px) {
+  .p-kontak-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .p-kontak-right {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .p-kontak-row {
+    grid-template-columns: 1fr;
+  }
+
+  .p-kontak-form {
+    padding: 20px;
+  }
+
+  .p-kontak-form-header {
+    padding: 18px 20px 14px;
+  }
+}

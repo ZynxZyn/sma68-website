@@ -1,0 +1,640 @@
+/* ==========================================================================
+   PageCommon.css — Shared styles for Tentang sub-pages (VisiMisi, Fasilitas, Eskul)
+   ========================================================================== */
+
+.p-page {
+  background-color: #f8fafc;
+  color: var(--color-text-body, #334155);
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Inline Page Header (Clean institutional hero alternative)
+   ========================================================================== */
+.p-page-header {
+  padding-top: clamp(100px, 10vw, 130px);
+  padding-bottom: clamp(32px, 4vw, 48px);
+  border-bottom: 1.5px solid rgba(11, 31, 51, 0.12);
+  margin-bottom: 52px;
+}
+
+.p-page-breadcrumb-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(11, 31, 51, 0.03);
+}
+
+.p-page-breadcrumb-inline a {
+  color: var(--color-text-muted, #5f758a);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.p-page-breadcrumb-inline a:hover {
+  color: var(--accent, #06b6d4);
+}
+
+.p-page-breadcrumb-inline span:last-child {
+  color: var(--ink, #0b1f33);
+  font-weight: 700;
+}
+
+.p-page-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 14px;
+}
+
+.p-page-title em {
+  font-style: normal;
+  color: var(--accent, #06b6d4);
+}
+
+.p-page-subtitle {
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--color-text-muted, #5f758a);
+  max-width: 760px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Content Section Wrapper
+   ========================================================================== */
+.p-page-content {
+  padding-bottom: clamp(60px, 6vw, 92px);
+}
+
+/* ==========================================================================
+   Visi Misi Styles
+   ========================================================================== */
+.p-visi-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b1f33 0%, #112d4a 100%);
+  color: #ffffff;
+  border-radius: 14px;
+  padding: clamp(32px, 4.5vw, 54px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-left: 8px solid var(--accent, #06b6d4);
+  box-shadow: 0 12px 36px rgba(11, 31, 51, 0.15);
+  margin-bottom: 60px;
+}
+
+.p-visi-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.p-visi-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #06b6d4);
+  margin-bottom: 20px;
+}
+
+.p-visi-quote {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+  font-style: normal;
+}
+
+.p-misi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.p-misi-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.p-misi-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.14);
+}
+
+.p-misi-num {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent, #06b6d4);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.p-misi-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.p-misi-desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+  flex: 1;
+}
+
+/* Nilai Tri Prasetya */
+.p-nilai-banner {
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 14px;
+  padding: clamp(32px, 4vw, 48px);
+  box-shadow: 0 4px 20px rgba(11, 31, 51, 0.04);
+}
+
+.p-nilai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.p-nilai-item {
+  background: #f8fafc;
+  border: 1.5px solid rgba(11, 31, 51, 0.1);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(11, 31, 51, 0.02);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.p-nilai-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent, #06b6d4);
+}
+
+.p-nilai-letter {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--ink, #0b1f33);
+  color: var(--accent, #06b6d4);
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 1.5px solid rgba(6, 182, 212, 0.3);
+}
+
+.p-nilai-item h4 {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 10px;
+}
+
+.p-nilai-item p {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Fasilitas Styles
+   ========================================================================== */
+.p-fasilitas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.p-fasilitas-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.p-fasilitas-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.14);
+}
+
+.p-fasilitas-thumb {
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+  background: #f1f5f9;
+}
+
+.p-fasilitas-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.p-fasilitas-card:hover .p-fasilitas-thumb img {
+  transform: scale(1.06);
+}
+
+/* Generic No Image Placeholder */
+.p-thumb-no-image {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #94a3b8;
+  border-bottom: 1.5px solid rgba(11, 31, 51, 0.08);
+}
+
+.p-thumb-no-image svg {
+  stroke: #94a3b8;
+}
+
+.p-thumb-no-image span {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.p-fasilitas-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.p-fasilitas-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.p-fasilitas-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent, #06b6d4);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-fasilitas-cat {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #5f758a);
+  background: #f1f5f9;
+  border: 1px solid rgba(11, 31, 51, 0.08);
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.p-fasilitas-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.p-fasilitas-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Eskul Styles
+   ========================================================================== */
+.p-eskul-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.p-eskul-filter-btn {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(11, 31, 51, 0.14);
+  background: #ffffff;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #5f758a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.p-eskul-filter-btn:hover {
+  border-color: var(--ink, #0b1f33);
+  color: var(--ink, #0b1f33);
+}
+
+.p-eskul-filter-btn.active {
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  border-color: var(--ink, #0b1f33);
+  box-shadow: 0 4px 12px rgba(11, 31, 51, 0.18);
+}
+
+.p-eskul-count {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(11, 31, 51, 0.08);
+  color: var(--ink, #0b1f33);
+  transition: all 0.15s ease;
+}
+
+.p-eskul-filter-btn.active .p-eskul-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+
+.p-eskul-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.p-eskul-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.p-eskul-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.14);
+}
+
+.p-eskul-thumb {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  background: #f1f5f9;
+}
+
+.p-eskul-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.p-eskul-card:hover .p-eskul-thumb img {
+  transform: scale(1.06);
+}
+
+.p-eskul-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.p-eskul-header {
+  margin-bottom: 12px;
+}
+
+.p-eskul-badge {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent, #06b6d4);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.p-eskul-name {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.p-eskul-sub {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 12px;
+}
+
+.p-eskul-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-text-body, #334155);
+  margin: 0;
+  flex: 1;
+}
+
+/* Cross-page navigation footer */
+.p-page-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1.5px solid rgba(11, 31, 51, 0.1);
+}
+
+.p-page-nav-footer--between {
+  justify-content: space-between;
+}
+
+.p-page-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.16);
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(11, 31, 51, 0.04);
+  transition: all 0.2s ease;
+}
+
+.p-page-nav-btn:hover {
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  border-color: var(--ink, #0b1f33);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11, 31, 51, 0.15);
+}
+
+.p-page-nav-btn--back:hover {
+  background: #ffffff;
+  color: var(--accent, #06b6d4);
+  border-color: var(--accent, #06b6d4);
+}
+
+/* CTA Box */
+.p-page-cta-box {
+  background: linear-gradient(135deg, #0b1f33 0%, #112d4a 100%);
+  color: #ffffff;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  padding: clamp(32px, 4vw, 48px);
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 12px 36px rgba(11, 31, 51, 0.15);
+}
+
+.p-page-cta-content h3 {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.p-page-cta-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.p-page-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .p-fasilitas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p-misi-grid,
+  .p-eskul-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p-page-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .p-page-cta-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .p-fasilitas-grid,
+  .p-misi-grid,
+  .p-nilai-grid,
+  .p-eskul-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .p-page-nav-footer--between {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .p-page-nav-btn {
+    justify-content: center;
+  }
+}

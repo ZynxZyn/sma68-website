@@ -1,0 +1,625 @@
+/* ==========================================================================
+   Navbar Component Styles — Dynamic White-to-Navy + Tentang Dropdown
+   ========================================================================== */
+
+:root {
+  --nav-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --nav-dur: 0.45s;
+}
+
+.p-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(11, 31, 51, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition:
+    height var(--nav-dur) var(--nav-ease),
+    background-color var(--nav-dur) var(--nav-ease),
+    border-color var(--nav-dur) var(--nav-ease),
+    box-shadow var(--nav-dur) var(--nav-ease),
+    backdrop-filter var(--nav-dur) var(--nav-ease),
+    -webkit-backdrop-filter var(--nav-dur) var(--nav-ease);
+  will-change: height, background-color, border-color, box-shadow;
+}
+
+/* Scrolled State: Deep Navy + Frosted Glass Blur */
+.p-navbar--scrolled {
+  height: 82px;
+  background-color: rgba(11, 31, 51, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+}
+
+.p-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+/* ==========================================================================
+   Brand: Logo + SMAN 68 JAKARTA
+   ========================================================================== */
+.p-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.p-navbar-logo-box {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(11, 31, 51, 0.04);
+  padding: 5px;
+  border: 1px solid rgba(11, 31, 51, 0.1);
+  transition:
+    transform 0.25s var(--nav-ease),
+    border-color var(--nav-dur) var(--nav-ease),
+    background-color var(--nav-dur) var(--nav-ease);
+}
+
+.p-navbar--scrolled .p-navbar-logo-box {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.p-navbar-brand:hover .p-navbar-logo-box {
+  transform: scale(1.06);
+  border-color: var(--accent, #06b6d4);
+}
+
+.p-navbar-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.p-navbar-school-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ink, #0b1f33);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color var(--nav-dur) var(--nav-ease);
+}
+
+.p-navbar--scrolled .p-navbar-school-name {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Desktop Navigation Links
+   ========================================================================== */
+.p-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.p-navbar-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  border-radius: var(--radius-default, 6px);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color var(--nav-dur) var(--nav-ease),
+    background-color var(--nav-dur) var(--nav-ease);
+}
+
+.p-navbar-link:hover {
+  color: var(--ink, #0b1f33);
+  background-color: rgba(11, 31, 51, 0.06);
+}
+
+.p-navbar-link.active {
+  color: var(--ink, #0b1f33);
+  font-weight: 700;
+  background-color: rgba(11, 31, 51, 0.08);
+}
+
+/* Scrolled Nav Link Colors */
+.p-navbar--scrolled .p-navbar-link {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.p-navbar--scrolled .p-navbar-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.p-navbar--scrolled .p-navbar-link.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.p-navbar-link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+  height: 2.5px;
+  background-color: var(--accent, #06b6d4);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Tentang Dropdown Menu (At Far Right of Nav Links)
+   ========================================================================== */
+.p-navbar-dropdown-wrapper {
+  position: relative;
+}
+
+.p-navbar-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.p-navbar-dropdown-arrow {
+  transition: transform 0.25s var(--nav-ease);
+}
+
+.p-navbar-dropdown-arrow.open,
+.p-navbar-dropdown-wrapper:hover .p-navbar-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.p-navbar-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 280px;
+  background: #ffffff;
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid rgba(11, 31, 51, 0.1);
+  box-shadow: 0 16px 40px rgba(11, 31, 51, 0.16);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.25s var(--nav-ease);
+  z-index: 120;
+}
+
+.p-navbar--scrolled .p-navbar-dropdown-menu {
+  background: rgba(11, 31, 51, 0.96);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.p-navbar-dropdown-wrapper:hover .p-navbar-dropdown-menu,
+.p-navbar-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.p-navbar-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-navbar-dropdown-item:hover {
+  background: rgba(6, 182, 212, 0.1);
+  transform: translateX(4px);
+}
+
+.p-navbar-dd-badge {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent, #06b6d4);
+  background: rgba(6, 182, 212, 0.14);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-navbar-dd-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.p-navbar-dd-title {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  line-height: 1.25;
+}
+
+.p-navbar--scrolled .p-navbar-dd-title {
+  color: #ffffff;
+}
+
+.p-navbar-dd-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.3;
+}
+
+.p-navbar--scrolled .p-navbar-dd-desc {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ==========================================================================
+   Right Actions
+   ========================================================================== */
+.p-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.p-navbar-spmb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 24px;
+  border-radius: var(--radius-default, 6px);
+  background-color: var(--ink, #0b1f33);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 14px rgba(11, 31, 51, 0.2);
+  transition:
+    background-color var(--nav-dur) var(--nav-ease),
+    color var(--nav-dur) var(--nav-ease),
+    box-shadow var(--nav-dur) var(--nav-ease),
+    transform 0.2s var(--nav-ease);
+}
+
+.p-navbar-spmb-btn:hover {
+  background-color: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+}
+
+/* Scrolled SPMB button */
+.p-navbar--scrolled .p-navbar-spmb-btn {
+  background-color: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3);
+}
+
+.p-navbar--scrolled .p-navbar-spmb-btn:hover {
+  background-color: #0891b2;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45);
+}
+
+.p-navbar-login-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 20px;
+  border-radius: var(--radius-default, 6px);
+  background-color: rgba(11, 31, 51, 0.05);
+  border: 1.5px solid rgba(11, 31, 51, 0.15);
+  color: var(--ink, #0b1f33);
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--nav-dur) var(--nav-ease),
+    border-color var(--nav-dur) var(--nav-ease),
+    color var(--nav-dur) var(--nav-ease);
+}
+
+.p-navbar-login-btn:hover {
+  background-color: rgba(11, 31, 51, 0.1);
+  border-color: rgba(11, 31, 51, 0.25);
+  color: var(--ink, #0b1f33);
+}
+
+/* Scrolled Login button */
+.p-navbar--scrolled .p-navbar-login-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.p-navbar--scrolled .p-navbar-login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Hamburger Toggle (Mobile)
+   ========================================================================== */
+.p-navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-default, 6px);
+  background-color: rgba(11, 31, 51, 0.05);
+  border: 1px solid rgba(11, 31, 51, 0.12);
+  cursor: pointer;
+  gap: 5px;
+  padding: 0;
+  transition:
+    background-color var(--nav-dur) var(--nav-ease),
+    border-color var(--nav-dur) var(--nav-ease);
+}
+
+.p-navbar--scrolled .p-navbar-toggle {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.p-navbar-toggle:hover {
+  background-color: rgba(11, 31, 51, 0.1);
+}
+
+.p-navbar--scrolled .p-navbar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.p-navbar-toggle span {
+  display: block;
+  width: 22px;
+  height: 2.2px;
+  background-color: var(--ink, #0b1f33);
+  border-radius: 2px;
+  transition:
+    transform 0.25s var(--nav-ease),
+    opacity 0.25s var(--nav-ease),
+    background-color var(--nav-dur) var(--nav-ease);
+}
+
+.p-navbar--scrolled .p-navbar-toggle span {
+  background-color: #ffffff;
+}
+
+.p-navbar-toggle.open span:nth-child(1) {
+  transform: translateY(7.2px) rotate(45deg);
+}
+
+.p-navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.p-navbar-toggle.open span:nth-child(3) {
+  transform: translateY(-7.2px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Mobile Drawer & Backdrop
+   ========================================================================== */
+.p-navbar-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 31, 51, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 150;
+  animation: backdropIn 200ms ease-out both;
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.p-navbar-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: #0b1f33;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
+  transition: right 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.p-navbar-mobile-drawer.open {
+  right: 0;
+}
+
+.p-navbar-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.p-navbar-mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.p-navbar-mobile-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.p-navbar-mobile-brand .p-navbar-school-name {
+  color: #ffffff;
+}
+
+.p-navbar-mobile-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition-fast, 150ms ease);
+}
+
+.p-navbar-mobile-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.p-navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.p-navbar-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: var(--radius-default, 6px);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-navbar-mobile-link:hover,
+.p-navbar-mobile-link.active {
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent, #06b6d4);
+}
+
+.p-navbar-mobile-active-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill, 9999px);
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  text-transform: uppercase;
+}
+
+.p-navbar-mobile-section-divider {
+  padding: 12px 14px 4px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent, #06b6d4);
+  text-transform: uppercase;
+}
+
+.p-navbar-mobile-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.p-navbar-mobile-spmb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: var(--radius-default, 6px);
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.p-navbar-mobile-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: var(--radius-default, 6px);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 992px) {
+  .p-navbar-links,
+  .p-navbar-actions {
+    display: none;
+  }
+
+  .p-navbar-toggle {
+    display: flex;
+  }
+}

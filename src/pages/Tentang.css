@@ -1,0 +1,547 @@
+/* ==========================================================================
+   Tentang Page Styles — Visi Misi, Fasilitas & Ekstrakurikuler
+   ========================================================================== */
+
+.p-tentang-page {
+  background-color: var(--bg-white, #ffffff);
+  color: var(--color-text-body, #334155);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.p-tentang-hero {
+  position: relative;
+  padding-block: 160px 80px;
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.p-tentang-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.p-tentang-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.p-tentang-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(11, 31, 51, 0.75) 0%, rgba(11, 31, 51, 0.94) 100%);
+}
+
+.p-tentang-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.p-tentang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill, 9999px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #06b6d4);
+  margin-bottom: 20px;
+}
+
+.p-tentang-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent, #06b6d4);
+  box-shadow: 0 0 8px var(--accent, #06b6d4);
+}
+
+.p-tentang-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.p-tentang-hero-title em {
+  font-style: normal;
+  color: var(--accent, #06b6d4);
+}
+
+.p-tentang-hero-desc {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 780px;
+  margin: 0 auto 32px;
+}
+
+/* Quick Jump Navigation */
+.p-tentang-nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.p-tentang-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill, 9999px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-tentang-nav-pill:hover {
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  border-color: var(--accent, #06b6d4);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Visi & Misi Section
+   ========================================================================== */
+.p-tentang-sec {
+  padding-block: clamp(60px, 6vw, 92px);
+}
+
+.p-tentang-visi-card {
+  background: linear-gradient(135deg, #0b1f33 0%, #0e2a47 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md, 8px);
+  padding: clamp(32px, 4vw, 48px);
+  border-left: 6px solid var(--accent, #06b6d4);
+  box-shadow: 0 12px 36px rgba(11, 31, 51, 0.15);
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-tentang-visi-tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #06b6d4);
+  margin-bottom: 14px;
+}
+
+.p-tentang-visi-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Misi Grid (6 items) */
+.p-tentang-misi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.p-tentang-misi-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: var(--radius-md, 8px);
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
+  transition: all var(--transition-std, 250ms ease);
+}
+
+.p-tentang-misi-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.12);
+}
+
+.p-tentang-misi-num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent, #06b6d4);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.p-tentang-misi-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.p-tentang-misi-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+}
+
+/* Nilai Karakter D-K-P */
+.p-tentang-nilai-banner {
+  background: #f5fafc;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: var(--radius-md, 8px);
+  padding: clamp(32px, 4vw, 48px);
+}
+
+.p-tentang-nilai-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+.p-tentang-nilai-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 8px;
+}
+
+.p-tentang-nilai-header p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+}
+
+.p-tentang-nilai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.p-tentang-nilai-item {
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.08);
+  border-radius: var(--radius-md, 8px);
+  padding: 28px 22px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(11, 31, 51, 0.04);
+}
+
+.p-tentang-nilai-letter {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent, #06b6d4);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.p-tentang-nilai-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 10px;
+}
+
+.p-tentang-nilai-item p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Fasilitas Section (8 items)
+   ========================================================================== */
+.p-tentang-fasilitas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.p-tentang-fasilitas-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: var(--radius-md, 8px);
+  padding: 26px 22px;
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-std, 250ms ease);
+}
+
+.p-tentang-fasilitas-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.14);
+}
+
+.p-tentang-fasilitas-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.p-tentang-fasilitas-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-tentang-fasilitas-cat {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #5f758a);
+  background: rgba(11, 31, 51, 0.05);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+.p-tentang-fasilitas-title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.p-tentang-fasilitas-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Ekstrakurikuler Section
+   ========================================================================== */
+.p-tentang-eskul-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.p-tentang-eskul-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid rgba(11, 31, 51, 0.12);
+  background: #ffffff;
+  color: var(--ink, #0b1f33);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-tentang-eskul-btn:hover {
+  border-color: var(--accent, #06b6d4);
+  color: var(--link-text, #0e7490);
+}
+
+.p-tentang-eskul-btn.active {
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  border-color: var(--ink, #0b1f33);
+}
+
+.p-tentang-eskul-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.p-tentang-eskul-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: var(--radius-md, 8px);
+  padding: 26px 22px;
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-std, 250ms ease);
+}
+
+.p-tentang-eskul-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.12);
+}
+
+.p-tentang-eskul-header {
+  margin-bottom: 12px;
+}
+
+.p-tentang-eskul-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent, #06b6d4);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+.p-tentang-eskul-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 4px;
+}
+
+.p-tentang-eskul-sub {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 12px;
+}
+
+.p-tentang-eskul-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #5f758a);
+  margin: 0;
+  flex: 1;
+}
+
+/* Bottom CTA Box */
+.p-tentang-cta-box {
+  background: linear-gradient(135deg, #0b1f33 0%, #081827 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md, 8px);
+  padding: clamp(36px, 5vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  box-shadow: 0 16px 40px rgba(11, 31, 51, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.p-tentang-cta-content h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.5vw, 1.875rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.p-tentang-cta-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.p-tentang-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .p-tentang-fasilitas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .p-tentang-misi-grid,
+  .p-tentang-nilai-grid,
+  .p-tentang-eskul-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p-tentang-cta-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .p-tentang-cta-actions {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .p-tentang-hero {
+    padding-block: 130px 60px;
+  }
+
+  .p-tentang-misi-grid,
+  .p-tentang-nilai-grid,
+  .p-tentang-fasilitas-grid,
+  .p-tentang-eskul-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .p-tentang-cta-actions {
+    flex-direction: column;
+  }
+
+  .p-tentang-cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

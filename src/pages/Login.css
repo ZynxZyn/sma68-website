@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Login Page — Simple & Modern Centered Card
+   ========================================================================== */
+
+.login-simple-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-soft, #f5fafc);
+  padding: 24px;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+}
+
+.login-simple-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(11, 31, 51, 0.1);
+  box-shadow: 0 10px 40px rgba(11, 31, 51, 0.07);
+  padding: clamp(28px, 5vw, 36px);
+  animation: loginFadeIn 300ms ease-out both;
+}
+
+@keyframes loginFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.login-simple-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-simple-logo-link {
+  display: inline-flex;
+  margin-bottom: 12px;
+}
+
+.login-simple-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.login-simple-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.login-simple-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.4;
+}
+
+/* Alert */
+.login-simple-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: var(--radius-default, 6px);
+  font-size: 0.8125rem;
+  margin-bottom: 18px;
+}
+
+.login-simple-alert svg {
+  flex-shrink: 0;
+}
+
+/* Form */
+.login-simple-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-simple-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-simple-field label {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+}
+
+.login-simple-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-simple-forgot {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--link-text, #0e7490);
+  text-decoration: none;
+}
+
+.login-simple-forgot:hover {
+  text-decoration: underline;
+}
+
+.login-simple-field input[type="text"],
+.login-simple-field input[type="password"] {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1.5px solid rgba(11, 31, 51, 0.15);
+  border-radius: var(--radius-default, 6px);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9375rem;
+  color: var(--ink, #0b1f33);
+  background: #ffffff;
+  outline: none;
+  transition: border-color var(--transition-fast, 150ms ease), box-shadow var(--transition-fast, 150ms ease);
+}
+
+.login-simple-field input:focus {
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+}
+
+.login-simple-field input.is-invalid {
+  border-color: #ef4444;
+}
+
+.login-simple-input-pwd-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-simple-input-pwd-wrap input {
+  padding-right: 44px;
+}
+
+.login-simple-eye-btn {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #5f758a);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-simple-eye-btn:hover {
+  color: var(--ink, #0b1f33);
+}
+
+.login-simple-err-msg {
+  font-size: 0.75rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.login-simple-remember-row {
+  display: flex;
+  align-items: center;
+}
+
+.login-simple-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--color-text-body, #2a3b4c);
+  cursor: pointer;
+}
+
+.login-simple-checkbox-label input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--accent, #06b6d4);
+}
+
+/* Submit Button */
+.login-simple-btn {
+  height: 48px;
+  border-radius: var(--radius-default, 6px);
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease);
+}
+
+.login-simple-btn:hover:not(:disabled) {
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  transform: translateY(-1px);
+}
+
+.login-simple-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Demo Fast Access */
+.login-simple-demo-box {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11, 31, 51, 0.08);
+}
+
+.login-simple-demo-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 8px;
+}
+
+.login-simple-demo-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.login-simple-chip {
+  padding: 5px 10px;
+  border-radius: var(--radius-pill, 9999px);
+  background: rgba(11, 31, 51, 0.05);
+  border: 1px solid rgba(11, 31, 51, 0.1);
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink, #0b1f33);
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.login-simple-chip:hover {
+  background: var(--accent, #06b6d4);
+  color: var(--btn-on-accent, #0b1f33);
+  border-color: var(--accent, #06b6d4);
+}
+
+/* Footer Link */
+.login-simple-footer {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.login-simple-back-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--link-text, #0e7490);
+  text-decoration: none;
+  transition: color var(--transition-fast, 150ms ease);
+}
+
+.login-simple-back-link:hover {
+  text-decoration: underline;
+  color: var(--ink, #0b1f33);
+}

@@ -1,0 +1,713 @@
+/* ==========================================================================
+   Section Informasi Component Styles — Dynamic Tabs, Search, Filter & Grid
+   ========================================================================== */
+
+/* Tabs Wrapper (Segmented / Modern Pill Navigation) */
+.p-tabs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 40px;
+  padding: 6px;
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 9999px;
+  max-width: fit-content;
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.p-tabs-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.p-tab-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #5f758a);
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.p-tab-btn svg {
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.p-tab-btn:hover {
+  color: var(--ink, #0b1f33);
+  background: rgba(11, 31, 51, 0.04);
+}
+
+.p-tab-btn:hover svg {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.p-tab-btn.active {
+  color: #ffffff;
+  background: var(--ink, #0b1f33);
+  border-color: var(--ink, #0b1f33);
+  box-shadow: 0 4px 12px rgba(11, 31, 51, 0.2);
+}
+
+.p-tab-btn.active svg {
+  color: var(--accent, #06b6d4);
+  opacity: 1;
+}
+
+.p-tab-indicator {
+  display: none;
+}
+
+.p-tab-content {
+  min-height: 320px;
+}
+
+.p-tab-animate {
+  animation: tabFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Search Bar (Berita)
+   ========================================================================== */
+.p-search-container {
+  margin-bottom: 36px;
+}
+
+.p-search-box {
+  position: relative;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.p-search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted, #5f758a);
+  pointer-events: none;
+}
+
+.p-search-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 46px 0 50px;
+  border: 1.5px solid rgba(11, 31, 51, 0.16);
+  border-radius: 9999px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9375rem;
+  color: var(--ink, #0b1f33);
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.p-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.p-search-input:focus {
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 0 0 3.5px rgba(6, 182, 212, 0.18);
+}
+
+.p-search-clear {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(11, 31, 51, 0.08);
+  color: var(--color-text-muted, #5f758a);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease;
+}
+
+.p-search-clear:hover {
+  background: rgba(11, 31, 51, 0.18);
+  color: var(--ink, #0b1f33);
+}
+
+/* ==========================================================================
+   News Cards Grid (Warta SMAN 68)
+   ========================================================================== */
+.p-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.p-news-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.p-news-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 30px rgba(11, 31, 51, 0.08);
+}
+
+.p-news-media {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.p-news-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.p-news-card:hover .p-news-media img {
+  transform: scale(1.05);
+}
+
+.p-no-image-box {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #94a3b8;
+}
+
+.p-no-image-box span {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.p-news-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.p-news-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.p-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 10px;
+}
+
+.p-news-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  line-height: 1.4;
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.p-news-desc {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.p-news-readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #0891b2;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.p-news-card:hover .p-news-readmore {
+  color: var(--ink, #0b1f33);
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Ruang Prestasi (Filter Bar & Cards)
+   ========================================================================== */
+.p-prestasi-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 34px;
+  padding: 16px 22px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.03);
+}
+
+.p-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-filter-label {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink, #0b1f33);
+  white-space: nowrap;
+}
+
+.p-filter-select {
+  height: 40px;
+  padding: 0 32px 0 12px;
+  border: 1.5px solid rgba(11, 31, 51, 0.16);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink, #0b1f33);
+  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235f758a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 12px center;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.p-filter-select:focus {
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+}
+
+.p-filter-reset-btn {
+  height: 40px;
+  padding: 0 16px;
+  border: 1.5px solid rgba(11, 31, 51, 0.2);
+  border-radius: 6px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #5f758a);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-left: auto;
+}
+
+.p-filter-reset-btn:hover {
+  background: var(--ink, #0b1f33);
+  color: #ffffff;
+  border-color: var(--ink, #0b1f33);
+}
+
+/* Prestasi Grid */
+.p-prestasi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.p-prestasi-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(11, 31, 51, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.p-prestasi-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 30px rgba(11, 31, 51, 0.08);
+}
+
+.p-prestasi-media {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.p-prestasi-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.p-prestasi-card:hover .p-prestasi-media img {
+  transform: scale(1.05);
+}
+
+.p-prestasi-media .p-tier-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.p-prestasi-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.p-prestasi-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 10px;
+}
+
+.p-prestasi-cat {
+  color: #0891b2;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+}
+
+/* Tier Badges (Gold, Silver, Bronze, Finalist) */
+.p-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.p-tier--gold {
+  background: #ffffff;
+  color: #b45309;
+  border: 1.5px solid #f59e0b;
+}
+
+.p-tier--silver {
+  background: #ffffff;
+  color: #334155;
+  border: 1.5px solid #64748b;
+}
+
+.p-tier--bronze {
+  background: #ffffff;
+  color: #92400e;
+  border: 1.5px solid #d97706;
+}
+
+.p-tier--finalist {
+  background: #ffffff;
+  color: #0891b2;
+  border: 1.5px solid #06b6d4;
+}
+
+
+.p-prestasi-year {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-text-muted, #5f758a);
+}
+
+.p-prestasi-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink, #0b1f33);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.p-prestasi-event {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #5f758a);
+  line-height: 1.5;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.p-prestasi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1.5px solid rgba(11, 31, 51, 0.08);
+}
+
+.p-prestasi-winner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--ink, #0b1f33);
+  font-weight: 600;
+}
+
+.p-prestasi-winner svg {
+  color: #0891b2;
+  flex-shrink: 0;
+}
+
+.p-prestasi-tag {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0891b2;
+  padding: 3px 10px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Galeri Kegiatan Grid
+   ========================================================================== */
+.p-galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.p-galeri-item {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.p-galeri-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, #06b6d4);
+  box-shadow: 0 12px 28px rgba(11, 31, 51, 0.12);
+}
+
+.p-galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.p-galeri-item:hover img {
+  transform: scale(1.06);
+}
+
+.p-galeri-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(11, 31, 51, 0.9) 0%, rgba(11, 31, 51, 0.3) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.p-galeri-item:hover .p-galeri-overlay {
+  opacity: 1;
+}
+
+.p-galeri-badge {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #06b6d4);
+  margin-bottom: 4px;
+}
+
+.p-galeri-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+.p-galeri-desc {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Empty State */
+.p-empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+}
+
+.p-empty-state p {
+  color: var(--color-text-muted, #5f758a);
+  margin-bottom: 16px;
+}
+
+/* Modals */
+.p-modal-news-body,
+.p-modal-galeri-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.p-modal-news-img,
+.p-modal-galeri-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1.5px solid rgba(11, 31, 51, 0.12);
+}
+
+.p-modal-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #5f758a);
+  flex-wrap: wrap;
+}
+
+.p-modal-news-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .p-news-grid,
+  .p-prestasi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p-galeri-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .p-tabs-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 12px;
+  }
+
+  .p-tab-btn {
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .p-news-grid,
+  .p-prestasi-grid,
+  .p-galeri-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .p-prestasi-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .p-filter-reset-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+}

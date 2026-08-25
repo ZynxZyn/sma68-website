@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Profil Singkat Component Styles (Left-aligned with background photo & scrim)
+   ========================================================================== */
+
+.p-section-bg {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--spacing-section, 80px);
+  color: #ffffff;
+}
+
+.p-section-bg-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.p-section-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.p-section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(11, 31, 51, 0.82) 0%, rgba(11, 31, 51, 0.65) 100%);
+}
+
+.p-section-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.p-profile-left-layout {
+  max-width: 1180px;
+  text-align: left;
+}
+
+.p-profile-left-layout .sec-pill--on-dark {
+  margin-bottom: 16px;
+}
+
+.p-profile-left-layout .sec-title--on-dark {
+  margin-bottom: 24px;
+}
+
+.p-profile-lead {
+  font-size: var(--text-lg, 1.125rem);
+  font-weight: 500;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.96);
+  margin-bottom: 16px;
+}
+
+.p-profile-lead strong {
+  color: var(--accent, #06b6d4);
+  font-weight: 700;
+}
+
+.p-profile-body {
+  font-size: var(--text-base, 1rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 36px;
+}
+
+/* Stats Grid */
+.p-profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 36px;
+}
+
+.p-profile-stat-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.p-profile-stat-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent, #06b6d4);
+  transform: translateY(-3px);
+}
+
+.p-profile-stat-num {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.p-profile-stat-num small {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent, #06b6d4);
+  margin-left: 3px;
+}
+
+.p-profile-stat-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.4;
+}
+
+
+.p-profile-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 767px) {
+  .p-profile-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .p-profile-left-layout {
+    max-width: 100%;
+  }
+
+  .p-profile-cta-group {
+    flex-direction: column;
+  }
+
+  .p-profile-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

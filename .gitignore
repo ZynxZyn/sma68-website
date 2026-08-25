@@ -1,0 +1,12 @@
+node_modules/  
+dist/  
+.next/  
+.env  
+.env.local  
+.env.production  
+.DS_Store  
+Thumbs.db  
+.vercel/  
+backend/node_modules/  
+backend/.next/  
+*.log 
