@@ -2,7 +2,10 @@ import { useRef, useState } from 'react';
 import { getToken } from '../api/client';
 import './ImageUploader.css';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:4000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? (
+  import.meta.env.PROD ? 'https://sma68-backend.vercel.app' : 'http://localhost:4000'
+);
+
 
 /**
  * ImageUploader — Drag & drop / click-to-upload component.

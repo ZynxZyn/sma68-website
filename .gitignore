@@ -10,3 +10,5 @@ Thumbs.db
 backend/node_modules/  
 backend/.next/  
 *.log 
+.vercel
+.env*

@@ -1,4 +1,7 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:4000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? (
+  import.meta.env.PROD ? 'https://sma68-backend.vercel.app' : 'http://localhost:4000'
+);
+
 
 const TOKEN_KEY = 'sma68_access_token';
 const REFRESH_KEY = 'sma68_refresh_token';
