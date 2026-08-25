@@ -5,22 +5,22 @@ const JALUR = [
   {
     name: 'Jalur Zonasi',
     quota: '50%',
-    desc: 'Prioritas penerimaan berdasarkan radius tempat tinggal di wilayah DKI Jakarta secara transparan.',
+    desc: 'Prioritas berdasarkan radius tempat tinggal di wilayah DKI Jakarta.',
   },
   {
     name: 'Jalur Prestasi',
     quota: '30%',
-    desc: 'Peluang emas bagi peraih nilai rapor akademik unggulan dan sertifikat juara resmi berjenjang.',
+    desc: 'Bagi peraih nilai rapor unggulan dan sertifikat juara resmi.',
   },
   {
     name: 'Jalur Afirmasi',
     quota: '15%',
-    desc: 'Dukungan pendidikan inklusif bagi pemegang KJP Plus, PIP, anak panti, serta penyandang disabilitas.',
+    desc: 'Untuk pemegang KJP Plus, PIP, anak panti, dan penyandang disabilitas.',
   },
   {
     name: 'Pindah Tugas',
     quota: '5%',
-    desc: 'Kemudahan akses bagi putra-putri pendidik/guru dan perpindahan tugas kedinasan resmi orang tua.',
+    desc: 'Bagi putra-putri pendidik dan perpindahan tugas kedinasan.',
   },
 ];
 
@@ -37,12 +37,12 @@ export default function PPDB() {
       <div className="container">
         <div className="p-spmb-inner">
           <h2 className="sec-title sec-title--on-dark p-spmb-title">
-            Wujudkan Impianmu Meraih Masa Depan Gemilang Bersama Enam Delapan
+            Wujudkan Impianmu Bersama Enam Delapan
           </h2>
 
           <p className="sec-sub sec-sub--on-dark p-spmb-desc">
-            Penerimaan Murid Baru (SPMB / PPDB) Tahun Ajaran 2025/2026 telah dibuka.
-            Bersiaplah menjadi bagian dari tradisi keunggulan akademik dan kepemimpinan di SMA Negeri 68 Jakarta.
+            SPMB / PPDB Tahun Ajaran 2025/2026 telah dibuka. Jadilah bagian dari tradisi
+            keunggulan akademik dan kepemimpinan di SMA Negeri 68 Jakarta.
           </p>
 
           {/* Quota breakdown cards */}
@@ -78,7 +78,7 @@ export default function PPDB() {
           </div>
 
           <p className="p-spmb-disclaimer">
-            * Pendaftaran resmi dilaksanakan secara terpusat melalui portal ppdb.jakarta.go.id tanpa dipungut biaya apapun (Gratis &amp; Terbuka).
+            * Pendaftaran resmi dilaksanakan melalui portal ppdb.jakarta.go.id tanpa dipungut biaya.
           </p>
         </div>
       </div>

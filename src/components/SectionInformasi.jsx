@@ -129,7 +129,7 @@ export default function SectionInformasi() {
             Eksplorasi Dinamika, <em>Warta &amp; Rekam Prestasi</em>
           </h2>
           <p className="sec-sub">
-            Temukan kisah inspiratif, kabar pencapaian mutakhir, dan ragam dokumentasi kebersamaan siswa-siswi SMA Negeri 68 Jakarta.
+            Temukan kisah inspiratif, kabar prestasi terbaru, dan dokumentasi kegiatan siswa-siswi SMAN 68.
           </p>
         </div>
 
@@ -193,7 +193,7 @@ export default function SectionInformasi() {
                 </svg>
                 <input
                   type="text"
-                  placeholder="Cari berita, agenda, pengumuman (mendukung pencarian cerdas)..."
+                  placeholder="Cari berita, agenda, atau pengumuman..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="p-search-input"

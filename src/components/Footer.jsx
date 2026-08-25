@@ -25,8 +25,8 @@ export default function Footer() {
             </a>
 
             <p className="p-footer-brand-desc">
-              Membentuk generasi pemimpin yang berintegritas, berwawasan global, dan berakhlak mulia
-              berlandaskan budaya disiplin, kreasi, dan tradisi prestasi sejak tahun 1981.
+              Membentuk generasi pemimpin yang berintegritas dan berakhlak mulia melalui
+              budaya disiplin, kreasi, dan prestasi sejak 1981.
             </p>
 
             <div className="p-footer-badge-row">

@@ -28,16 +28,15 @@ export default function Profile() {
 
 
           <p className="p-profile-lead">
-            Berdiri megah di kawasan prestisius Salemba sejak 1981, <strong>SMA Negeri 68 Jakarta</strong> (Enam Delapan)
-            telah menjadi rumah bagi ribuan pemikir kritis, inovator muda, dan generasi pemenang yang mengukir prestasi
-            hingga kancah dunia.
-          </p>
+             Berdiri megah di kawasan Salemba sejak 1981, <strong>SMA Negeri 68 Jakarta</strong> (Enam Delapan)
+             telah menjadi rumah bagi ribuan pemikir kritis dan generasi pemenang yang mengukir prestasi
+             hingga kancah dunia.
+           </p>
 
-          <p className="p-profile-body">
-            Kami menggabungkan kurikulum adaptif masa depan dengan ekosistem belajar yang suportif dan penuh inspirasi.
-            Di sini, setiap potensi diasah secara maksimal — membimbing Anda tidak hanya menembus perguruan tinggi impian,
-            tetapi juga tumbuh menjadi insan berintegritas tinggi yang siap memimpin perubahan.
-          </p>
+           <p className="p-profile-body">
+             Kurikulum adaptif dan ekosistem belajar yang suportif membimbing setiap potensi —
+             membekali siswa menembus PTN impian sekaligus tumbuh menjadi insan berintegritas.
+           </p>
 
           {/* Key Metrics Grid */}
           <div className="p-profile-stats-grid" aria-label="Statistik Utama SMAN 68 Jakarta">

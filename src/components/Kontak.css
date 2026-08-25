@@ -414,4 +414,10 @@
   .p-kontak-form-header {
     padding: 18px 20px 14px;
   }
+
+  .p-kontak-field input,
+  .p-kontak-field textarea,
+  .p-kontak-field select {
+    font-size: 16px; /* ≥16px mencegah auto-zoom iOS Safari */
+  }
 }

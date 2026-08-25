@@ -20,18 +20,15 @@ export default function Kepsek() {
           {/* Left Column: Quote / Sambutan (Rata Kanan) */}
           <div className="p-kepsek-content-col">
             <h2 className="p-kepsek-heading">
-              "Pendidikan Terbaik Membuka Pintu Inovasi, Memperkokoh Karakter, dan Menyalakan Impian Tanpa Batas."
+              "Pendidikan Terbaik Membuka Pintu Inovasi dan Menyalakan Impian Tanpa Batas."
             </h2>
 
             <div className="p-kepsek-quote-body">
               <p>
-                Selamat datang di portal resmi SMA Negeri 68 Jakarta. Kami meyakini bahwa setiap anak muda
-                memiliki benih keunggulan luar biasa yang menunggu untuk disemai dalam lingkungan belajar yang
-                penuh motivasi, menghargai kreativitas, dan berlandaskan disiplin serta akhlak mulia.
-              </p>
-              <p>
-                Bersama para pendidik hebat dan ekosistem kampus yang dinamis, kami membekali peserta didik
-                untuk berani bermimpi besar, menaklukkan tantangan global, dan menjadi teladan nyata bagi kemajuan bangsa.
+                Selamat datang di portal resmi SMA Negeri 68 Jakarta. Kami meyakini setiap anak muda
+                memiliki benih keunggulan yang akan tumbuh dalam lingkungan belajar yang penuh motivasi,
+                kreativitas, dan disiplin. Bersama para pendidik hebat, kami membekali peserta didik
+                untuk berani bermimpi besar dan menjadi teladan bagi kemajuan bangsa.
               </p>
             </div>
 

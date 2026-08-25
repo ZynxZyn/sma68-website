@@ -139,12 +139,20 @@
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .p-profile-body {
     font-size: 0.9rem;
     line-height: 1.7;
     margin-bottom: 28px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .p-profile-stat-card {

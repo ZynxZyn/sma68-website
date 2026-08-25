@@ -188,6 +188,10 @@
   .p-kepsek-quote-body p {
     font-size: 0.925rem;
     line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .p-kepsek-photo-col {

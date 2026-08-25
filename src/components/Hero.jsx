@@ -110,8 +110,8 @@ export default function Hero() {
           </h1>
 
           <p className="p-hero-desc">
-            Membina insan berwibawa, berakhlak mulia, dan berdaya saing global melalui
-            pendidikan berkualitas tinggi, lingkungan belajar inspiratif, dan pembinaan karakter unggul sejak 1981.
+            Membina insan berwibawa dan berdaya saing global melalui pendidikan berkualitas
+            serta pembinaan karakter sejak 1981.
           </p>
 
           {/* Action CTA Buttons */}

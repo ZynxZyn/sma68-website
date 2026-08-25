@@ -116,8 +116,7 @@ export default function Kontak() {
             Hubungi &amp; Kunjungi <em>SMAN 68 Jakarta</em>
           </h2>
           <p className="p-kontak-sub">
-            Kami siap memberikan informasi terkait Penerimaan Murid Baru (SPMB), kurikulum,
-            layanan administrasi, dan kemitraan pendidikan.
+            Kami siap membantu informasi SPMB, kurikulum, layanan administrasi, dan kemitraan pendidikan.
           </p>
         </div>
 
