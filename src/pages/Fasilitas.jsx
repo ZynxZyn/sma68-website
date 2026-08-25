@@ -9,35 +9,46 @@ import './PageCommon.css';
 
 const FASILITAS = [
   {
-    title: '24 Ruang Kelas Digital Smartboard',
+    title: 'Ruang Kelas Ber-AC & Multimedia',
     cat: 'Ruang Belajar',
-    desc: 'Dilengkapi pendingin udara (AC), proyektor interaktif/Smart TV, koneksi internet serat optik kecepatan tinggi, dan ergonomis.',
+    desc: 'Dilengkapi pendingin udara (AC), proyektor interaktif/Smart TV, koneksi internet serat optik kecepatan tinggi, dan tata letak ergonomis.',
     icon: 'screen',
-    image: foto3,
+    image: 'https://awsimages.detik.net.id/community/media/visual/2022/04/08/suasana-ptm-di-sman-68-jakarta-anggi-detikcom_169.jpeg?w=1200',
   },
   {
-    title: 'Laboratorium Sains Terpadu',
+    title: 'Laboratorium IPA & Sains Terpadu',
     cat: 'Riset & Eksperimen',
     desc: 'Laboratorium Fisika, Kimia, dan Biologi lengkap dengan instrumen uji modern, mikroskop digital, dan standar keselamatan lab.',
     icon: 'flask',
+    image: 'https://github.com/nadhiframadhan780-dev/appsmanegeri68jakarta/blob/main/Lab%20ipa.png?raw=true',
   },
   {
     title: 'Laboratorium Komputer & TIK',
     cat: 'Teknologi Informasi',
-    desc: 'Tiga ruang lab komputer multimedia modern untuk pembelajaran pemrograman, simulasi UTBK-SNBT, dan riset digital.',
+    desc: 'Ruang lab komputer multimedia modern untuk pembelajaran pemrograman, simulasi asesmen digital, dan riset berbasis TIK.',
     icon: 'cpu',
+    image: 'https://media.suara.com/pictures/653x366/2017/04/07/21547-persiapan-ujian-nasional-berbasis-komputer.jpg',
   },
   {
-    title: 'Auditorium & Gedung Menza 68',
-    cat: 'Gedung Serbaguna',
-    desc: 'Gedung pertemuan dan pertunjukan seni berkapasitas 1.000 orang dengan tata suara profesional dan panggung pertunjukan megah.',
-    icon: 'theater',
+    title: 'Masjid Darul Ulum SMAN 68',
+    cat: 'Sarana Ibadah',
+    desc: 'Pusat pembinaan spiritual berkapasitas ratusan jamaah dengan tata kelola modern, ruang wudhu higienis, dan suasana tenang.',
+    icon: 'moon',
+    image: 'https://sman68jkt.sch.id/gallery_gen/fb28d242bbcac106ce7901e76547cc6a_fit.jpg?ts=1775459157',
   },
   {
-    title: 'Perpustakaan Digital Ki Hajar Dewantara',
+    title: 'Perpustakaan & Pusat Literasi',
     cat: 'Pusat Sumber Belajar',
     desc: 'Koleksi puluhan ribu buku fisik, ribuan e-book, jurnal ilmiah terakreditasi, ruang diskusi hening, dan e-catalog mandiri.',
     icon: 'book',
+    image: 'https://img.antarafoto.com/cache/400x300/2013/07/15/implementasi-kurikulum-2013-7034-dom.jpg',
+  },
+  {
+    title: 'Ruang Seni Musik & Pertunjukan',
+    cat: 'Kreativitas & Seni',
+    desc: 'Studio musik kedap suara dengan instrumen band lengkap, gamelan nusantara, dan perlengkapan orkestra/brass band.',
+    icon: 'theater',
+    image: 'https://github.com/nadhiframadhan780-dev/appsmanegeri68jakarta/blob/main/ruang%20seni%20musik.png?raw=true',
   },
   {
     title: 'Sarana Olahraga Multifungsi',
@@ -47,17 +58,11 @@ const FASILITAS = [
     image: foto1,
   },
   {
-    title: 'Masjid Darul Ulum SMAN 68',
-    cat: 'Sarana Ibadah',
-    desc: 'Pusat pembinaan spiritual berkapasitas 800 jamaah dengan tata kelola modern, ruang wudhu higienis, dan perpustakaan Islam.',
-    icon: 'moon',
-  },
-  {
-    title: 'UKS, Poliklinik & Ruang Konseling BK',
-    cat: 'Layanan Kesehatan & Karir',
-    desc: 'Fasilitas kesehatan siswa dengan tenaga medis berkala serta ruang bimbingan karir untuk konsultasi perguruan tinggi dan beasiswa.',
+    title: 'Kantin Sehat & Higienis',
+    cat: 'Layanan Siswa',
+    desc: 'Kantin modern dengan menu bergizi terstandar dinas kesehatan, area makan bersih, dan sistem transaksi higienis.',
     icon: 'heart',
-    image: foto4,
+    image: 'https://github.com/nadhiframadhan780-dev/appsmanegeri68jakarta/blob/main/ChatGPT%20Image%2022%20Mei%202026,%2007.19.25.png?raw=true',
   },
 ];
 
