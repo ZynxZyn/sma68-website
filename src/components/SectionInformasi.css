@@ -826,3 +826,30 @@
     max-height: 240px;
   }
 }
+
+/* ==========================================================================
+   Skeleton Loading States
+   ========================================================================== */
+@keyframes p-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.p-skeleton-block,
+.p-skeleton-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 800px 100%;
+  animation: p-shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+.p-news-card--skeleton {
+  pointer-events: none;
+  user-select: none;
+}
+
+.p-skeleton-line {
+  height: 14px;
+  display: block;
+}
+

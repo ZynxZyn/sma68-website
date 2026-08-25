@@ -1,169 +1,16 @@
 import { useState, useMemo, useEffect } from 'react';
-import foto1 from '../assets/foto-1.jpg';
-import foto2 from '../assets/foto-2.webp';
-import foto3 from '../assets/foto-3.jpg';
-import foto4 from '../assets/foto-4.jpg';
 import Modal from './Modal';
 import { newsApi, achievementApi, galleryApi } from '../api/services';
 import './SectionInformasi.css';
 
-/* ==========================================================================
-   Initial / Fallback Data for Section Informasi
-   ========================================================================== */
-const INITIAL_BERITA = [
-  {
-    id: 'b-1',
-    title: 'SMAN 68 Jakarta Luncurkan "Pusat Layanan" — Portal Digital Resmi untuk Seluruh Warga Sekolah',
-    category: 'Digital',
-    date: '2026-06-20',
-    summary: 'SMAN 68 Jakarta menghadirkan terobosan digital baru yang dirancang khusus untuk memenuhi kebutuhan seluruh warga sekolah dalam satu ekosistem terpadu.',
-    content: 'Jakarta, Juni 2026 — SMAN 68 Jakarta kini menghadirkan sebuah terobosan digital yang dirancang khusus untuk mempermudah akses informasi dan layanan administrasi bagi siswa, guru, orang tua, dan alumni. Portal ini mengintegrasikan pengecekan kelulusan, legalisir ijazah online, survei kinerja, hingga informasi beasiswa.',
-    image: 'https://github.com/nadhiframadhan780-dev/appsmanegeri68jakarta/blob/main/pusat%20layanan%20lainnya%20sman%2068%20jakarta.png?raw=true',
-    author: 'Humas SMAN 68',
-  },
-  {
-    id: 'b-2',
-    title: 'Siswa SMAN 68 Jakarta Raih Medali Emas di Olimpiade Sains Nasional (OSN) 2025',
-    category: 'Akademik',
-    date: '2025-08-14',
-    summary: 'Prestasi gemilang kembali ditorehkan oleh delegasi Tim Olimpiade Sains (TOSLA) SMAN 68 Jakarta di ajang tingkat nasional bidang Matematika dan Fisika.',
-    content: 'Tim Olimpiade Sains SMAN 68 Jakarta (TOSLA) berhasil mempertahankan tradisi juara dengan membawa pulang 2 Medali Emas dan 1 Medali Perak pada ajang Olimpiade Sains Nasional (OSN) yang diselenggarakan oleh Balai Pengembangan Talenta Indonesia (BPTI).',
-    image: foto1,
-    author: 'Humas SMAN 68',
-  },
-  {
-    id: 'b-3',
-    title: 'Pengumuman Hasil Seleksi Calon Peserta Didik Baru Jalur Mutasi Tahun Ajaran 2026/2027',
-    category: 'Pengumuman',
-    date: '2026-07-01',
-    summary: 'Panitia Seleksi Murid Mutasi (PENMURMUT) SMAN 68 Jakarta menyampaikan hasil seleksi resmi bagi calon peserta didik mutasi.',
-    content: 'Jakarta, 01 Juli 2026 — Panitia Seleksi Murid Mutasi (PENMURMUT) SMAN 68 Jakarta dengan ini menyampaikan hasil seleksi resmi penerimaan murid baru mutasi semester ganjil tahun ajaran 2026/2027. Seluruh calon siswa yang dinyatakan lolos diimbau segera melakukan daftar ulang.',
-    image: 'https://github.com/nadhiframadhan780-dev/appsmanegeri68jakarta/blob/main/Pengumuman%20seleksi%20penmurmut.png?raw=true',
-    author: 'Panitia PENMURMUT',
-  },
-  {
-    id: 'b-4',
-    title: 'Pemeringkatan PTN & Kampus Impian: Sebaran Lulusan SMAN 68 Jakarta di PTN Unggulan',
-    category: 'Prestasi',
-    date: '2026-06-15',
-    summary: 'Lebih dari 850 alumni SMAN 68 Jakarta sukses menembus Universitas Indonesia (UI), disusul UGM, ITB, UNAIR, dan universitas ternama dunia.',
-    content: 'Berdasarkan data rekam jejak kelulusan dari tahun 2011 hingga sekarang, SMA Negeri 68 Jakarta konsisten mencatatkan diri sebagai salah satu sekolah pemasok mahasiswa terbanyak di Universitas Indonesia (UI) dengan total lebih dari 2.450 alumni, serta kampus top global seperti Monash University dan University of Toronto.',
-    image: 'https://media.indozone.id/crop/0x0:0x0/images/2026/01/14/1768352620_6966eb6c54bf6_maxresdefault.jpg',
-    author: 'Tim Bimbingan Karir 68',
-  },
-  {
-    id: 'b-5',
-    title: 'VIRSCH 68: Kompetisi Akbar Olahraga & Seni Tahunan SMA Negeri 68 Jakarta',
-    category: 'Kegiatan',
-    date: '2026-05-10',
-    summary: 'Ajang bergengsi kejuaraan basket, tari modern, tari tradisional, dan musik antar-SMA se-Jabodetabek kembali digelar.',
-    content: 'VIRSCH 68 (Virtual & Real Salemba Championship) sukses menarik ribuan partisipan dari puluhan SMA di Jabodetabek dalam berbagai cabang lomba olahraga dan seni pertunjukan.',
-    image: 'https://github.com/nadhiframadhan780-dev/smanegeri68jakarta/blob/main/carasel_monstazia.jpeg?raw=true',
-    author: 'OSIS / MPK SMAN 68',
-  },
-  {
-    id: 'b-6',
-    title: 'Perpanjangan Masa Daftar Ulang Calon Siswa Baru dan Verifikasi Berkas Fisik',
-    category: 'Pengumuman',
-    date: '2026-07-04',
-    summary: 'Kebijakan resmi perpanjangan batas akhir daftar ulang bagi calon peserta didik yang telah dinyatakan diterima.',
-    content: 'Panitia SPMB SMAN 68 Jakarta memberikan kelonggaran waktu bagi orang tua murid untuk melengkapi berkas administrasi dan cek kesehatan di ruang Tata Usaha.',
-    image: 'https://github.com/p4nelof5434234468adm/imglink.sman68jkt/blob/main/perpanjangan%20masa%20daftar%20ulang.png?raw=true',
-    author: 'Panitia SPMB',
-  },
-];
-
-const INITIAL_PRESTASI = [
-  {
-    id: 'p-1',
-    title: 'Juara 1 & Medali Emas Olimpiade Matematika Nasional',
-    event: 'Olimpiade Sains Nasional (OSN) 2025',
-    category: 'Akademik',
-    level: 'Nasional',
-    year: '2025',
-    tier: 'gold',
-    tierLabel: 'Medali Emas',
-    winner: 'Fakhri & Tim Matematika TOSLA',
-    image: foto1,
-  },
-  {
-    id: 'p-2',
-    title: 'Juara 2 Lomba Riset Ilmiah Lingkungan & Bioteknologi',
-    event: 'National Young Scientists Fair 2025',
-    category: 'Riset & Sains',
-    level: 'Nasional',
-    year: '2025',
-    tier: 'silver',
-    tierLabel: 'Medali Perak',
-    winner: 'KIR 68 Salemba',
-    image: foto3,
-  },
-  {
-    id: 'p-3',
-    title: 'Juara 1 Kejuaraan Marching Band & Brass Band Tingkat Provinsi',
-    event: 'Grand Prix Marching Band DKI Jakarta 2024',
-    category: 'Seni & Musik',
-    level: 'Provinsi',
-    year: '2024',
-    tier: 'gold',
-    tierLabel: 'Juara 1 (Emas)',
-    winner: 'MBrass 68',
-    image: foto2,
-  },
-  {
-    id: 'p-4',
-    title: 'Medali Perunggu Festival & Lomba Seni Siswa (FLS2N)',
-    event: 'FLS2N Tingkat Nasional 2024 - Bidang Seni Tari Tradisional',
-    category: 'Seni & Tari',
-    level: 'Nasional',
-    year: '2024',
-    tier: 'bronze',
-    tierLabel: 'Medali Perunggu',
-    winner: 'Tracesight 68',
-    image: foto4,
-  },
-  {
-    id: 'p-5',
-    title: 'Peringkat 10 Nasional Sekolah Berdasarkan Nilai UTBK',
-    event: 'Lembaga Tes Masuk Perguruan Tinggi (LTMPT)',
-    category: 'Akademik',
-    level: 'Nasional',
-    year: '2024',
-    tier: 'gold',
-    tierLabel: 'Top 10 Nasional',
-    winner: 'SMAN 68 Jakarta',
-    image: 'https://media.indozone.id/crop/0x0:0x0/images/2026/01/14/1768352620_6966eb6c54bf6_maxresdefault.jpg',
-  },
-  {
-    id: 'p-6',
-    title: 'Finalis Debat Bahasa Inggris LDBI Tingkat Nasional',
-    event: 'Lomba Debat Bahasa Indonesia & Inggris (LDBI) 2024',
-    category: 'Bahasa',
-    level: 'Nasional',
-    year: '2024',
-    tier: 'finalist',
-    tierLabel: 'Finalis Nasional',
-    winner: 'Solitaire English Club 68',
-    image: foto3,
-  },
-];
-
-const INITIAL_GALERI = [
-  { id: 'g-1', title: 'Suasana Belajar Kondusif & Pembelajaran Tatap Muka', category: 'Akademik', image: 'https://awsimages.detik.net.id/community/media/visual/2022/04/08/suasana-ptm-di-sman-68-jakarta-anggi-detikcom_169.jpeg?w=1200', desc: 'Aktivitas belajar mengajar dengan fasilitas kelas modern dan teknologi interaktif.' },
-  { id: 'g-2', title: 'Gelar Karya Budaya & Pagelaran Seni Monstazia', category: 'Seni & Budaya', image: 'https://github.com/nadhiframadhan780-dev/smanegeri68jakarta/blob/main/carasel_monstazia.jpeg?raw=true', desc: 'Kemeriahan festival seni tahunan unjuk talenta dan kebersamaan murid SMAN 68.' },
-  { id: 'g-3', title: 'Kampus Hijau & Gedung Megah SMAN 68 Salemba', category: 'Kampus', image: 'https://media.indozone.id/crop/0x0:0x0/images/2026/01/14/1768352620_6966eb6c54bf6_maxresdefault.jpg', desc: 'Lingkungan kampus asri dan strategis di jantung kota Salemba, Jakarta Pusat.' },
-  { id: 'g-4', title: 'Laboratorium Komputer & Ujian Berbasis Komputer', category: 'Teknologi', image: 'https://media.suara.com/pictures/653x366/2017/04/07/21547-persiapan-ujian-nasional-berbasis-komputer.jpg', desc: 'Sarana komputer dan simulasi digital berstandar nasional.' },
-  { id: 'g-5', title: 'Perpustakaan & Pusat Literasi Ki Hajar Dewantara', category: 'Fasilitas', image: 'https://img.antarafoto.com/cache/400x300/2013/07/15/implementasi-kurikulum-2013-7034-dom.jpg', desc: 'Ruang baca tenang dengan ribuan koleksi referensi cetak dan digital.' },
-  { id: 'g-6', title: 'Kegiatan Pembinaan Karakter & Upacara Bendera', category: 'Karakter', image: foto1, desc: 'Pembinaan kedisiplinan dan jiwa kepemimpinan di lapangan utama.' },
-];
-
 export default function SectionInformasi() {
   const [activeTab, setActiveTab] = useState('berita'); // 'berita' | 'prestasi' | 'galeri'
 
-  // Live CMS State
-  const [beritaData, setBeritaData] = useState(INITIAL_BERITA);
-  const [prestasiData, setPrestasiData] = useState(INITIAL_PRESTASI);
-  const [galeriData, setGaleriData] = useState(INITIAL_GALERI);
+  // Live CMS State — starts empty, populated from database
+  const [beritaData, setBeritaData] = useState([]);
+  const [prestasiData, setPrestasiData] = useState([]);
+  const [galeriData, setGaleriData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Filter & Modal State
   const [searchQuery, setSearchQuery] = useState('');
@@ -178,6 +25,7 @@ export default function SectionInformasi() {
   // Fetch Live Data from CMS Backend
   useEffect(() => {
     async function fetchCmsData() {
+      setIsLoading(true);
       try {
         const [newsRes, achRes, galRes] = await Promise.allSettled([
           newsApi.list({ limit: 12, status: 'PUBLISHED' }),
@@ -190,10 +38,10 @@ export default function SectionInformasi() {
             id: n.id,
             title: n.title,
             category: n.category || 'Warta',
-            date: n.publishedAt ? n.publishedAt.slice(0, 10) : '2025-08-01',
+            date: n.publishedAt ? n.publishedAt.slice(0, 10) : '2026-01-01',
             summary: n.excerpt || n.content?.slice(0, 140) + '...',
             content: n.content || '',
-            image: n.thumbnail || foto1,
+            image: n.thumbnail || '',
             author: n.author?.name || 'Humas SMAN 68',
           }));
           setBeritaData(mappedNews);
@@ -217,7 +65,7 @@ export default function SectionInformasi() {
               tier,
               tierLabel: a.achievement || 'Juara',
               winner: a.studentTeam || 'Siswa SMAN 68',
-              image: a.image || null,
+              image: a.image || '',
             };
           });
           setPrestasiData(mappedAch);
@@ -228,13 +76,15 @@ export default function SectionInformasi() {
             id: g.id,
             title: g.title,
             category: g.album || 'Kegiatan',
-            image: g.images?.[0]?.url || foto1,
+            image: g.images?.[0]?.url || '',
             desc: g.caption || g.title,
           }));
           setGaleriData(mappedGal);
         }
       } catch (err) {
-        console.warn('CMS API loading error (using fallback initial data):', err);
+        console.warn('CMS API error:', err);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -363,7 +213,20 @@ export default function SectionInformasi() {
             </div>
 
             {/* News Cards Grid */}
-            {filteredBerita.length === 0 ? (
+            {isLoading ? (
+              <div className="p-news-grid">
+                {[1,2,3,4,5,6].map((i) => (
+                  <div key={i} className="p-news-card p-news-card--skeleton">
+                    <div className="p-news-media p-skeleton-block" style={{ height: 180 }} />
+                    <div className="p-news-body">
+                      <div className="p-skeleton-line" style={{ width: '40%', marginBottom: 8 }} />
+                      <div className="p-skeleton-line" style={{ width: '90%', marginBottom: 6 }} />
+                      <div className="p-skeleton-line" style={{ width: '70%' }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : filteredBerita.length === 0 ? (
               <div className="p-empty-state">
                 <p>Tidak ada berita yang sesuai dengan kata kunci "<strong>{searchQuery}</strong>".</p>
                 <button type="button" className="btn btn--secondary btn--sm" onClick={() => setSearchQuery('')}>
