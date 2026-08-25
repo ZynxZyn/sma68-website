@@ -253,9 +253,6 @@ export default function SectionInformasi() {
         
         {/* Centered Global Header */}
         <div className="sec-header sec--centered">
-          <div className="sec-pill-wrap">
-            <span className="sec-pill sec-pill--primary">✦ PUSAT INFORMASI &amp; PRESTASI</span>
-          </div>
           <h2 className="sec-title">
             Eksplorasi Dinamika, <em>Warta &amp; Rekam Prestasi</em>
           </h2>

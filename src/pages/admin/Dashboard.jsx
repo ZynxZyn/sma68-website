@@ -156,10 +156,6 @@ export default function Dashboard() {
       {/* 1. Symmetrical Welcome & Quick Action Hero Banner */}
       <section className="adm-welcome-card">
         <div className="adm-welcome-left">
-          <div className="adm-welcome-badge">
-            <span className="adm-live-dot" />
-            <span>{greeting()}, {firstName} &bull; Panel Administrasi SMAN 68</span>
-          </div>
           <h1 className="adm-welcome-title">
             Dashboard <em>Manajemen &amp; Konten</em>
           </h1>

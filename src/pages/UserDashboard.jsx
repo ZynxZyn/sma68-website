@@ -187,10 +187,6 @@ export default function UserDashboard() {
             <>
               <section className="user-welcome">
                 <div className="user-welcome-text">
-                  <span className="user-welcome-pill">
-                    <span className="user-welcome-dot" />
-                    {greeting()} 👋
-                  </span>
                   <h1 className="user-welcome-title">Halo, {firstName}!</h1>
                   <p className="user-welcome-sub">
                     Berikut ringkasan informasi terbaru untuk Anda di portal SMA Negeri 68 Jakarta.

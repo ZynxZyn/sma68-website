@@ -21,14 +21,10 @@ export default function Profile() {
       <div className="container">
         {/* Left-aligned layout */}
         <div className="p-profile-left-layout">
-          <div className="sec-pill-wrap">
-            <span className="sec-pill sec-pill--primary" style={{ background: 'rgba(6, 182, 212, 0.15)', color: '#06b6d4', borderColor: 'rgba(6, 182, 212, 0.35)' }}>
-              ✦ SEJARAH &amp; PRESTASI SALEMBA
-            </span>
-          </div>
           <h2 className="sec-title sec-title--on-dark">
             Kawah Candradimuka Pemimpin Masa Depan di Jantung Jakarta
           </h2>
+
 
 
           <p className="p-profile-lead">
