@@ -301,13 +301,20 @@
 
 @media (max-width: 480px) {
   .p-ai-chat-root {
-    bottom: 20px;
-    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: 14px;
   }
 
   .p-ai-panel {
-    width: calc(100vw - 32px);
-    right: -16px;
-    bottom: 70px;
+    width: min(360px, calc(100vw - 28px));
+    max-height: min(520px, 75vh);
+    right: -6px;
+    bottom: 68px;
+    border-radius: 14px;
+  }
+
+  .p-ai-fab {
+    width: 52px;
+    height: 52px;
   }
 }

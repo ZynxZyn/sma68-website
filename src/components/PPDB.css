@@ -98,20 +98,41 @@
 @media (max-width: 900px) {
   .p-spmb-quota-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 }
 
-@media (max-width: 480px) {
-  .p-spmb-quota-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .p-spmb-quota-card {
+    padding: 16px 14px;
+  }
+
+  .p-spmb-quota-val {
+    font-size: 1.3rem;
+  }
+
+  .p-spmb-quota-name {
+    font-size: 0.8125rem;
+  }
+
+  .p-spmb-quota-desc {
+    font-size: 0.75rem;
   }
 
   .p-spmb-cta-group {
     flex-direction: column;
+    gap: 10px;
   }
 
   .p-spmb-cta-group .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 440px) {
+  .p-spmb-quota-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }

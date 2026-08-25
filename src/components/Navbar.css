@@ -55,21 +55,23 @@
 .p-navbar-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(10px, 2vw, 16px);
   text-decoration: none;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .p-navbar-logo-box {
-  width: 52px;
-  height: 52px;
+  width: clamp(40px, 5.5vw, 48px);
+  height: clamp(40px, 5.5vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 9px;
   background-color: rgba(11, 31, 51, 0.04);
-  padding: 5px;
+  padding: 4px;
   border: 1px solid rgba(11, 31, 51, 0.1);
+  flex-shrink: 0;
   transition:
     transform 0.25s var(--nav-ease),
     border-color var(--nav-dur) var(--nav-ease),
@@ -82,7 +84,7 @@
 }
 
 .p-navbar-brand:hover .p-navbar-logo-box {
-  transform: scale(1.06);
+  transform: scale(1.05);
   border-color: var(--accent, #06b6d4);
 }
 
@@ -94,9 +96,9 @@
 
 .p-navbar-school-name {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: clamp(0.95rem, 3.4vw, 1.15rem);
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--ink, #0b1f33);
   text-transform: uppercase;
   white-space: nowrap;
@@ -464,17 +466,21 @@
 .p-navbar-mobile-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 300px;
+  right: -360px;
+  width: min(320px, 86vw);
   height: 100vh;
+  height: 100dvh;
   background: #0b1f33;
   z-index: 200;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: clamp(18px, 4vw, 24px);
+  padding-top: max(20px, env(safe-area-inset-top));
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
   transition: right 300ms cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .p-navbar-mobile-drawer.open {

@@ -63,13 +63,11 @@
   --transition-std: 250ms var(--ease-out);
   --transition-slow: 400ms var(--ease-out);
 
-  /* Container & Spacing — Compact Sharp Layout */
+  /* Container & Spacing — Fluid Responsive Layout */
   --container-max: 1200px;
-  --container-pad: clamp(16px, 2.5vw, 32px);
-  --spacing-section: clamp(40px, 4.5vw, 64px);
+  --container-pad: clamp(14px, 3.8vw, 28px);
+  --spacing-section: clamp(44px, 6vw, 72px);
 }
-
-
 
 /* ==========================================================================
    CSS Reset & Base
@@ -85,6 +83,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -94,6 +94,8 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 

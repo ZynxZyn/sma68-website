@@ -109,15 +109,14 @@
   font-weight: 700;
   color: var(--ink, #0b1f33);
   line-height: 1.35;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
 }
 
 .p-kontak-card-sub {
   font-size: 0.79rem;
   color: var(--color-text-muted, #5f758a);
   line-height: 1.4;
+  word-break: break-word;
 }
 
 .p-kontak-card-arrow {
@@ -140,7 +139,7 @@
 }
 
 .p-kontak-map-inner {
-  height: 200px;
+  height: clamp(180px, 28vw, 240px);
   background: #e8eef4;
   overflow: hidden;
 }

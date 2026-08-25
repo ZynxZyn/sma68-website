@@ -155,7 +155,7 @@
 @media (max-width: 900px) {
   .p-kepsek-layered-card {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
 
   .p-kepsek-content-col {
@@ -170,25 +170,46 @@
     text-align: left;
   }
 
+  .p-kepsek-heading {
+    font-size: clamp(1.25rem, 4.5vw, 1.65rem);
+    line-height: 1.35;
+    margin-block: 12px 18px;
+  }
+
   .p-kepsek-quote-body {
-    padding-left: 18px;
+    padding-left: 16px;
     padding-right: 0;
-    border-left: 2px solid var(--accent, #06b6d4);
+    border-left: 3px solid var(--accent, #06b6d4);
     border-right: none;
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+
+  .p-kepsek-quote-body p {
+    font-size: 0.925rem;
+    line-height: 1.7;
   }
 
   .p-kepsek-photo-col {
     order: -1;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .p-kepsek-photo-frame {
-    max-width: 220px;
+    max-width: 240px;
   }
 }
 
-@media (max-width: 767px) {
-  .p-kepsek-section {
-    padding-block: 56px;
+@media (max-width: 600px) {
+  .p-kepsek-photo-frame {
+    max-width: 200px;
+  }
+
+  .p-kepsek-name {
+    font-size: 1rem;
+  }
+
+  .p-kepsek-title {
+    font-size: 0.8125rem;
   }
 }
