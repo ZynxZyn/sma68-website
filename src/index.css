@@ -33,15 +33,15 @@
   --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Typography scale (§2.3) - Balanced & Professional */
-  --text-xs: 0.75rem;            /* 12px */
-  --text-sm: 0.875rem;           /* 14px */
-  --text-base: 1rem;             /* 16px */
-  --text-lg: 1.125rem;           /* 18px */
-  --text-xl: 1.25rem;            /* 20px */
-  --text-2xl: clamp(1.35rem, 2vw, 1.625rem);    /* 22-26px */
-  --text-3xl: clamp(1.75rem, 3vw, 2.375rem);    /* 28-38px - H2 */
-  --text-4xl: clamp(2.25rem, 4.2vw, 3.5rem);    /* 36-56px - H1 */
+  /* Typography scale (§2.3) - Compact & Elegant Modern Scale */
+  --text-xs: 0.75rem;            /* 11px */
+  --text-sm: 0.8125rem;          /* 12px */
+  --text-base: 0.9375rem;        /* 14px */
+  --text-lg: 1.0625rem;          /* 16px */
+  --text-xl: 1.1875rem;          /* 18px */
+  --text-2xl: clamp(1.25rem, 1.8vw, 1.5rem);     /* 19-22px */
+  --text-3xl: clamp(1.5rem, 2.4vw, 2rem);        /* 22-30px - H2 */
+  --text-4xl: clamp(1.85rem, 3.2vw, 2.75rem);    /* 28-41px - H1 */
 
   /* Design Tokens (§2.1 - 6px default radius, minimal editorial shadows) */
   --radius-sm: 0.25rem;          /* 4px */
@@ -63,12 +63,11 @@
   --transition-std: 250ms var(--ease-out);
   --transition-slow: 400ms var(--ease-out);
 
-  /* Container & Spacing — Proportional Modern Layout */
-  --container-max: 1320px;
-  --container-pad: clamp(18px, 3vw, 40px);
-  --spacing-section: clamp(48px, 5vw, 76px);
+  /* Container & Spacing — Compact Sharp Layout */
+  --container-max: 1200px;
+  --container-pad: clamp(16px, 2.5vw, 32px);
+  --spacing-section: clamp(40px, 4.5vw, 64px);
 }
-
 
 
 
@@ -82,7 +81,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 15px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -92,10 +91,11 @@ body {
   font-family: var(--font-body);
   color: var(--color-text-body);
   background-color: var(--bg-white);
-  line-height: 1.65;
+  line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
